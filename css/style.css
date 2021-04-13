@@ -186,7 +186,7 @@ nav{display: none;}
   display: block;
   width: 2em;
   height: 1px;
-  margin: 0.5em auto lem;
+  margin: 0.5em auto 1em;
   background: var(--clr-light);
   opacity: 0.25;
 }
