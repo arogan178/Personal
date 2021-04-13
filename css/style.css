@@ -44,6 +44,11 @@ body{
   line-height: 1.6;
 }
 
+
+section{
+  padding: 5em 2em;
+}
+
 img{
   display: block;
   max-width: 100%
@@ -174,6 +179,7 @@ nav{display: none;}
   /*(background-blend-mode: multiply;*/
   color: var(--clr-light);
   text-align: center;
+  margin-top: 1em;
 }
 
 .section__title--services{
@@ -222,7 +228,6 @@ nav{display: none;}
 }
 
 @media (min-width:600px) {
-
   .about-me{
     display: grid;
     grid-template-columns: 1fr 200px;
@@ -251,6 +256,7 @@ nav{display: none;}
     grid-area: img;
     position: relative;
     z-index: 2;
+    maring-top: 0.5em;
   }
 }
 
