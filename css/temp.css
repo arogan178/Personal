@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --ff-secondary: 'Source Code Pro', monospace;
+  --fw-reg: 300;
+  --fw-bold: 900;
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.5),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
+  --background-color: var(--clr-light);
+  --font-color: var(--clr-dark);
+}
+
+:root.dark{
+  --background-color: var(--clr-dark);
+  --font-color: var(--clr-light);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color:  var(--clr-dark);
+    --font-color: var(--clr-light);
+  }
+
+  :root.light {
+    --background-color:  var(--clr-light);
+    --font-color: var(--clr-dark);
+  }
+}
+
+body {
+    font-family: system-ui;
+    background: var(--background-color);
+    color: var(--font-color);
+
+    font-size: 22px;
+
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    padding: 20px 20px 40px 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 1em auto;
+}
+
+p {
+    font-family: serif;
+    font-size: 1em;
+    line-height: 1.45;
+}
+
+.toggle-switch {
+    display: block;
+}
+
+#toggle-input {
+    display: none;
+}
+
+.toggle-switch__control {
+    width: 40px;
+    height: 14px;
+    border-radius: 7px;
+    position: relative;
+
+    background: #999;
+
+    cursor: pointer;
+
+    margin: 50px auto;
+}
+
+.toggle-switch__control::after {
+    content: '';
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+
+    position: absolute;
+    left: -1px;
+    top: -3px;
+
+    background: var(--background-color);
+
+    transition: left 0.25s;
+}
+
+#toggle-input:checked + .toggle-switch__control::after {
+    left: 21px;
+}
+
+.site-logo {
+    width: 125px;
+    height: 125px;
+
+    position: relative;
+    margin: 40px auto;
+}
+
+.site-logo img {
+    width: 20px;
+    display: none;
+    margin-right: 10px;
+    outline: none;
+}
+.site-logo img.active {
+    display: block;
+}
+
+.site-logo__toggle-container,
+.site-logo__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.site-logo__toggle-container {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+
+    top: 1px;
+    left: 1px;
+
+    background: var(--font-color);
+}
