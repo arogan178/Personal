@@ -16,27 +16,27 @@
 
 <body>
   <header>
-
-
     <script src="js/index.js" async></script>
     <script src="js/toggle.js" async></script>
 
-    <div class="logo">
+    <div class="theme__selector">
       <div class="logo__toggle-container">
-<div class="theme__logo">
-        <i class="fas fa-adjust"></i>
-</div>
+        <div class="theme__logo">
+          <i class="fas fa-adjust"></i>
+        </div>
 
         <label class="toggle-switch" for="toggle-input">
           <input id="toggle-input" type="checkbox">
           <div class="toggle-switch__control"></div>
         </label>
       </div>
-
     </div>
     <div>
       <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
+  <div class="hamburger__icon">
+    <span class="hamburger"></span>
+  </div>
+
       </button>
       <nav class="nav">
         <ul class="nav__list">
@@ -46,6 +46,7 @@
           <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li>
         </ul>
       </nav>
+    </div>
     </div>
   </header>
 
@@ -146,7 +147,6 @@
       <a href="#" class="portfolio__item">
         <img src="img/work/work7.jpg" alt="" class="portfolio__img">
       </a>
-
       <!-- Portfolio item 8-->
       <a href="#" class="portfolio__item">
         <img src="img/work/work8.jpg" alt="" class="portfolio__img">

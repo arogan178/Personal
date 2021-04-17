@@ -12,6 +12,7 @@
   --clr-light: #fff;
   --clr-dark: #303030;
   --clr-accent: #16e0bd;
+  --clr-darkSection: #1f1f1f;
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
@@ -21,9 +22,11 @@
   --background-color: var(--clr-light);
   --font-color: var(--clr-dark);
   --toggle-color: var(--clr-dark);
+  --section-color: var(--clr-darkSection);
 }
 
-:root.dark {
+:root.dark,
+ {
   --background-color: var(--clr-dark);
   --toggle-color: var(--clr-light);
   --font-color: var(--clr-light);
@@ -189,18 +192,24 @@ h3 {
 }
 
 /* header */
-header {
+header{
+  background: black;
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-shadow: var(--bs);
 }
 
-.logo {
+.theme__selector {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
+  box-shadow: var(--bs);
 }
 
 .theme__logo {
@@ -259,7 +268,6 @@ header {
   background: transparent;
   border: 0;
   cursor: pointer;
-  position: fixed;
   right: 1em;
   top: 1em;
   z-index: 1000;
@@ -293,11 +301,15 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: var(--clr-accent);
+  background: var(--clr-light);
   width: 2em;
   height: 3px;
   border-radius: 1em;
   transition: transform 250ms ease-in-out;
+}
+
+.hamburger__icon{
+    box-shadow: var(--bs);
 }
 
 .hamburger::before {
@@ -318,7 +330,7 @@ header {
 
 /* Intro Section */
 .intro {
-  position: relative;
+  padding-top: 5em;
 }
 
 .intro__img {
@@ -361,7 +373,7 @@ header {
 
 /* My Services Section */
 .my-services {
-  background-color: var(--clr-dark);
+  background-color: var(--clr-darkSection);
   background-image: url(../img/services-bg.jpg);
   background-size: cover;
   background-blend-mode: multiply;
@@ -449,7 +461,7 @@ header {
 
 /* My work Section */
 .my-work {
-  background-color: var(--clr-dark);
+  background-color: var(--clr-darkSection);
   color: var(--clr-light);
   text-align: center;
 }
@@ -460,14 +472,17 @@ header {
 }
 
 .portfolio__item {
-  background: var(--clr-dark);
+  background: var(--clr-darkSection);
   overflow: hidden;
+
 }
 
 .portfolio__img {
+  max-height: 100%;
   transition:
     transform 750ms cubic-bezier(.5, 0, .5, 1),
     opacity 250ms linear;
+
 }
 
 .portfolio__item:focus {
