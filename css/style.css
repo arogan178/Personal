@@ -192,72 +192,72 @@ h3 {
 }
 
 /* header */
-
 .splashImage {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url(../img/wallpaper.jpg);
-    background-size: cover;
-    background-position: center;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    background-attachment: fixed;
-    z-index: 1000;
-    background-blend-mode: multiply;
-    background-color: #a8a8a8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../img/wallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-attachment: fixed;
+  z-index: 1000;
+  background-blend-mode: multiply;
+  background-color: #a8a8a8;
 }
 
 .splashImage h1 {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: relative;
-    color: #FFF;
-    padding: 20px;
-    text-align: center;
-    font-size: var(--fs-h1);
-    text-shadow: var(--bs);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  color: #FFF;
+  padding: 20px;
+  text-align: center;
+  font-size: var(--fs-h1);
+  text-shadow: var(--bs);
 }
+
 .clickScroll {
-    z-index: 3;
-    opacity: 0;
-    height: 0px;
-    position: absolute;
-}
-.splash__btn i{
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-text-stroke: 0px;
-    cursor:pointer;
-    font-size: var(--fs-h1);
-    text-align: center;
-    width: 50%;
-  }
-
-input[type=checkbox]:checked ~ .splashImage {
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
+  z-index: 3;
+  opacity: 0;
+  height: 0px;
+  position: absolute;
 }
 
+.splash__btn i {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-text-stroke: 0px;
+  cursor: pointer;
+  font-size: var(--fs-h1);
+  text-align: center;
+  width: 50%;
+}
+
+input[type=checkbox]:checked~.splashImage {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
 
 .splash__btn {
-    color: #FFF;
-    font-size: 3em;
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    z-index: 3;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-text-stroke: 0px;
-    cursor:point
+  color: #FFF;
+  font-size: 3em;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  z-index: 3;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-text-stroke: 0px;
+  cursor: point
 }
 
 /* header {
@@ -270,8 +270,6 @@ width: 100%;
 z-index: 10;
 box-shadow: var(--bs);
 } */
-
-
 .header__bar {
   background: #a8a8a8;
   display: flex;
