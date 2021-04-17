@@ -11,46 +11,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
   <header>
     <script src="js/index.js" async></script>
     <script src="js/toggle.js" async></script>
+        <script src="js/splash.js" async></script>
 
-    <div class="theme__selector">
-      <div class="logo__toggle-container">
-        <div class="theme__logo">
-          <i class="fas fa-adjust"></i>
-        </div>
-
-        <label class="toggle-switch" for="toggle-input">
-          <input id="toggle-input" type="checkbox">
-          <div class="toggle-switch__control"></div>
-        </label>
-      </div>
-    </div>
-    <div>
-      <button class="nav-toggle" aria-label="toggle navigation">
-  <div class="hamburger__icon">
-    <span class="hamburger"></span>
+<div class="">
+  <input id="clickScroll" type="checkbox" class="clickScroll"></input>
+  <div class="splashImage" id="splashImage">
+      <h1>Scrollable splash screen</h1>
+      <label class="splash__btn" for="clickScroll">
+        <span class="fa-stack">
+          <i class="fa fa-circle-thin fa-stack-2x"></i>
+          <i class="fa fa-bars fa-stack-1x"></i>
+        </span>
+  </label>
   </div>
+</div>
 
-      </button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
-          <li class="nav__list"><a href="#services" class="nav__link">My Services</a></li>
-          <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
-          <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li>
-        </ul>
-      </nav>
+
+
+    <div class="header__bar">
+      <div class="theme__selector">
+        <div class="logo__toggle-container">
+          <div class="theme__logo">
+            <i class="fas fa-adjust"></i>
+          </div>
+
+          <label class="toggle-switch" for="toggle-input">
+            <input id="toggle-input" type="checkbox">
+            <div class="toggle-switch__control"></div>
+          </label>
+        </div>
+      </div>
+      <div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+          <div class="hamburger__icon">
+            <span class="hamburger"></span>
+          </div>
+
+        </button>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__list"><a href="#services" class="nav__link">My Services</a></li>
+            <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
+            <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     </div>
   </header>
 
   <!-- Introduction -->
+
   <section class="intro" id="home">
     <h1 class="section__title section__title--intro">
       Hi, I am <strong>Andrea Bugeja</strong>

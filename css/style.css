@@ -26,7 +26,7 @@
 }
 
 :root.dark,
- {
+  {
   --background-color: var(--clr-dark);
   --toggle-color: var(--clr-light);
   --font-color: var(--clr-light);
@@ -192,8 +192,91 @@ h3 {
 }
 
 /* header */
-header{
-  background: black;
+
+.splashImage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../img/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-attachment: fixed;
+    z-index: 1000;
+}
+.splashImage h1 {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+    font-size: 10vw;
+    text-shadow: 0 2px 10px #000;
+}
+.clickScroll {
+    z-index: 3;
+    opacity: 0;
+    height: 0px;
+    position: absolute;
+}
+.splash__btn {
+    color: #FFF;
+    font-size: 3em;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    z-index: 3;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-text-stroke: 0px;
+    cursor:pointer;
+  }
+
+input[type=checkbox]:checked ~ .splashImage {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+/* .wrapper {
+    height: 100%;
+    overflow: scroll;
+} */
+
+.splash__btn {
+    color: #FFF;
+    font-size: 3em;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    z-index: 3;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-text-stroke: 0px;
+    cursor:point
+}
+
+/* header {
+background: #a8a8a8;
+display: flex;
+justify-content: space-between;
+padding: 1em;
+position: fixed;
+width: 100%;
+z-index: 10;
+box-shadow: var(--bs);
+} */
+
+
+.header__bar {
+  background: #a8a8a8;
   display: flex;
   justify-content: space-between;
   padding: 1em;
@@ -228,7 +311,7 @@ header{
   right: 0;
 }
 
- .nav {
+.nav {
   position: fixed;
   background: var(--clr-dark);
   color: var(--clr-light);
@@ -308,8 +391,8 @@ header{
   transition: transform 250ms ease-in-out;
 }
 
-.hamburger__icon{
-    box-shadow: var(--bs);
+.hamburger__icon {
+  box-shadow: var(--bs);
 }
 
 .hamburger::before {
@@ -329,6 +412,8 @@ header{
 }
 
 /* Intro Section */
+.Splashscreen__background {}
+
 .intro {
   padding-top: 5em;
 }
@@ -474,7 +559,6 @@ header{
 .portfolio__item {
   background: var(--clr-darkSection);
   overflow: hidden;
-
 }
 
 .portfolio__img {
@@ -482,7 +566,6 @@ header{
   transition:
     transform 750ms cubic-bezier(.5, 0, .5, 1),
     opacity 250ms linear;
-
 }
 
 .portfolio__item:focus {
