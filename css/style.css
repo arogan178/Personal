@@ -230,6 +230,8 @@ h3 {
 }
 
 .splash__btn i {
+  position: relative;
+  width: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -237,7 +239,7 @@ h3 {
   cursor: pointer;
   font-size: var(--fs-h1);
   text-align: center;
-  width: 50%;
+  text-shadow: var(--bs);
 }
 
 input[type=checkbox]:checked~.splashImage {
