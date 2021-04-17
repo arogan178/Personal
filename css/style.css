@@ -206,18 +206,21 @@ h3 {
     transition: all 0.5s ease;
     background-attachment: fixed;
     z-index: 1000;
+    background-blend-mode: multiply;
+    background-color: #a8a8a8;
 }
+
 .splashImage h1 {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    position: absolute;
+    position: relative;
     color: #FFF;
     padding: 20px;
     text-align: center;
-    font-size: 10vw;
-    text-shadow: 0 2px 10px #000;
+    font-size: var(--fs-h1);
+    text-shadow: var(--bs);
 }
 .clickScroll {
     z-index: 3;
@@ -225,18 +228,15 @@ h3 {
     height: 0px;
     position: absolute;
 }
-.splash__btn {
-    color: #FFF;
-    font-size: 3em;
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    z-index: 3;
+.splash__btn i{
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     -webkit-text-stroke: 0px;
     cursor:pointer;
+    font-size: var(--fs-h1);
+    text-align: center;
+    width: 50%;
   }
 
 input[type=checkbox]:checked ~ .splashImage {
@@ -244,10 +244,7 @@ input[type=checkbox]:checked ~ .splashImage {
     -ms-transform: translateY(-100%);
     transform: translateY(-100%);
 }
-/* .wrapper {
-    height: 100%;
-    overflow: scroll;
-} */
+
 
 .splash__btn {
     color: #FFF;
@@ -581,7 +578,7 @@ box-shadow: var(--bs);
 
 .footer {
   background: #111;
-  color: var(--clr-accent);
+  color: var(--clr-light);
   text-align: center;
   padding: 2.5em 0;
   font-size: var(--fs-h3);
