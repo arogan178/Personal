@@ -192,7 +192,7 @@ h3 {
     margin-bottom: 2em;
 }
 
-/* header */
+/* Splash Image */
 
 .splashImage {
     position: absolute;
@@ -279,11 +279,13 @@ input[type=checkbox]:checked~.splashImage {
     }
 }
 
+/* Header */
+
 .header__bar {
     background: #802d2d;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 0.5em;
     position: fixed;
     width: 100%;
     z-index: 10;
@@ -302,6 +304,7 @@ input[type=checkbox]:checked~.splashImage {
 .theme__logo {
     display: block;
     padding: 0.5em;
+
 }
 
 .logo__toggle-container {
@@ -314,6 +317,8 @@ input[type=checkbox]:checked~.splashImage {
     left: 0;
     right: 0;
 }
+
+/* Nav Menu */
 
 .nav {
     position: fixed;
@@ -460,10 +465,12 @@ input[type=checkbox]:checked~.splashImage {
 /* My Services Section */
 
 .my-services {
+    
     background-color: var(--clr-darkSection);
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: #000000df;
     color: var(--clr-light);
     text-align: center;
 }
@@ -506,6 +513,7 @@ input[type=checkbox]:checked~.splashImage {
 }
 
 .about-me {
+    padding-top: 5em;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -545,7 +553,7 @@ input[type=checkbox]:checked~.splashImage {
 
 /* My work Section */
 
-.my-work {
+.my-portfolio {
     background-color: var(--clr-darkSection);
     color: var(--clr-light);
     text-align: center;
@@ -576,6 +584,8 @@ input[type=checkbox]:checked~.splashImage {
     transform: scale(1.2);
     opacity: .5;
 }
+
+/* Footer */
 
 .footer {
     background: var(--background-color);
