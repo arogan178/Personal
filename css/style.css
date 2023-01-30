@@ -465,19 +465,21 @@ input[type=checkbox]:checked~.splashImage {
 /* My Services Section */
 
 .my-services {
-    
+
     background-color: var(--clr-darkSection);
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
     background-blend-mode: multiply;
     background-color: #000000df;
     color: var(--clr-light);
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .section__title--services {
     color: var(--clr-light);
     position: relative;
+    text-align: center;
 }
 
 .section__title--services::after {
@@ -492,10 +494,11 @@ input[type=checkbox]:checked~.splashImage {
 
 .services {
     margin-bottom: 4em;
+   /*  margin-left: 4em; */
 }
 
 .service {
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
