@@ -57,6 +57,18 @@ html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-accent);
+}
+
 body {
     background: var(--background-color);
     color: var(--font-color);
@@ -193,6 +205,11 @@ h3 {
 }
 
 /* Splash Image */
+
+.splash__page {
+    height: 100vh;
+    overflow: hidden;
+}
 
 .splashImage {
     position: absolute;
@@ -494,7 +511,7 @@ input[type=checkbox]:checked~.splashImage {
 
 .services {
     margin-bottom: 4em;
-   /*  margin-left: 4em; */
+    /*  margin-left: 4em; */
 }
 
 .service {
