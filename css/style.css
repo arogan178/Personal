@@ -76,6 +76,8 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    transition: background 500ms ease-in-out, color 500ms ease-in-out;
+    overflow: auto;
 }
 
 section {
