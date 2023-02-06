@@ -2,218 +2,172 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Il-Flexx's Humble Abode</title>
-  <script src="https://kit.fontawesome.com/19fd722078.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/krishdevdb/reseter.css/css/reseter.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea's Humble Abode</title>
+    <script src="https://kit.fontawesome.com/19fd722078.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header>
+    <header>
+        <div>
+            <input id="clickScroll" type="checkbox" class="clickScroll"></input>
+            <div class="splashImage" id="splashImage">
+                <h1>Welcome</h1>
+                <label class="splash__btn" for="clickScroll">
+                    <div class="splash__btn">
+                        <i class="fas fa-angle-double-down"></i>
+                    </div>
 
-
-    <div>
-      <input id="clickScroll" type="checkbox" class="clickScroll"></input>
-      <div class="splashImage" id="splashImage">
-        <h1>Welcome</h1>
-        <label class="splash__btn" for="clickScroll">
-          <div class="splash__btn">
-            <i class="fas fa-angle-double-down"></i>
-          </div>
-
-        </label>
-      </div>
-    </div>
-
-
-
-    <div class="header__bar">
-      <div class="theme__selector">
-        <div class="logo__toggle-container">
-          <div class="theme__logo">
-            <i class="fas fa-adjust"></i>
-          </div>
-
-          <label class="toggle-switch" for="toggle-input">
-            <input id="toggle-input" type="checkbox">
-            <div class="toggle-switch__control"></div>
-          </label>
+                </label>
+            </div>
         </div>
-      </div>
-      <div>
-        <button class="nav-toggle" aria-label="toggle navigation">
-          <div class="hamburger__icon">
-            <span class="hamburger"></span>
-          </div>
 
-        </button>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
-            <li class="nav__list"><a href="#services" class="nav__link">My Services</a></li>
-            <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
-            <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    </div>
-  </header>
+        <div class="header__bar">
+            <div class="theme__selector">
+                <div class="logo__toggle-container">
+                    <div class="theme__logo">
+                        <i class="fas fa-adjust"></i>
+                    </div>
 
-  <!-- Introduction -->
+                    <label class="toggle-switch" for="toggle-input">
+                        <input id="toggle-input" type="checkbox">
+                        <div class="toggle-switch__control"></div>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <div class="hamburger__icon">
+                        <span class="hamburger"></span>
+                    </div>
 
-  <section class="intro" id="home">
-    <h1 class="section__title section__title--intro">
-      Hi, I am <strong>Andrea Bugeja</strong>
-    </h1>
-    <p class="section__subtitle section__subtitle--intro"> Welcome! </p>
-    <img src="img/me1.jpg" alt="A picture of sexy human" class="intro__img">
-  </section>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
+                        <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
+                        <li class="nav__list"><a href="#services" class="nav__link">My Services</a></li>
 
-  <!-- Services -->
-  <section class="my-services" id="services">
-    <h2 class="section__title section__title--services">Passions & Hobbies</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Photo Editing</h3>
-        <p>
-          Having a strong passion for photo manipulation, creating new perspectives to understanding subjects differently. Also, I sometimes make memes 😎.
-        </p>
-      </div><!-- Service -->
-      <div class="service">
-        <h3>Constructive Critism</h3>
-        <p>
-          Taking up philosophy during my post-secondary education has unlocked new skills which bear much potential.
-          Being the perfectionist I am, Criticism comes naturally towards others, even though most of the time it is not Constructive.
-          Also I sometimes flame in CS:GO
-        </p>
-      </div><!-- Service -->
-      <div class="service">
-        <h3>Stock-Trader</h3>
-        <p>
-          In 1969, man set foot on the moon. That is no longer a challange, we must aim for Mars and believe that Musk will take us there.
-          Stonks are the way and the waves we will ride.
-        </p>
-      </div><!-- Service -->
-    </div>
+                        <!-- <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </header>
 
-    <a href="#work" class="btn">My Work</a>
-  </section>
+    <!-- Introduction -->
 
-  <!-- About Me -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I'm <strong>Andrea Bugeja</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro"> Welcome! </p>
+        <img src="img/me1.jpg" alt="A picture of sexy human" class="intro__img">
+    </section>
 
-  <section class="about-me" id="about">
-    <h2 class="section__title section__title--about">Who I am</h2>
-    <p class="section__subtitle section__subtitle--about">Games Grad with a passion for Gaming, Sports, Ai & Crypto</p>
+    <!-- About Me -->
 
-    <div class="about-me__body">
-      <p>
-        Being the greek god I am, sports have always been a central part of my lifestyle. Despite current times being difficult due to the ongoing pandamic, we still managed to get a stunning 11.78s PB (100m - 2020)(Eric ieqaf ahrali fuq il-hin)
-        whilst being inactive for the past
-        5 years.
-      </p>
-      <p>
-        Since discovering CS:GO in 2014, things have always been different. Having a strong competitive mindset allowed me to break into the local CS:GO Scene in 2016.
-      </p>
-    </div>
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who am I ?</h2>
+        <p class="section__subtitle section__subtitle--about">DevOps/Sprinter/Gamer</p>
 
-    <img src="img/me2.jpg" alt="2 Sexy Humans" class="about-me__img">
-  </section>
+        <div class="about-me__body">
+            <p>
+                Well as you might have guessed, I'm <strong>Andrea</strong>, currently pursuing a Master's degree in
+                Artificial Intelligence at the University of Malta.
+            </p>
 
-  <!-- My Work -->
+            <p>
+                Apart from my Masters, I also hold a Degree in Game Design & Development, which has given me a strong
+                foundation in both computer science and game development.
+            </p>
 
-  <section class="my-work" id="work">
-    <h2 class="section__title">My Work</h2>
-    <p class="section__subtitle">A showcase of memes</p>
+            <p>Outside of my academic pursuits, I am a dedicated athlete and have competed in numerous track events,
+                achieving recognition at a national level. I am also a passionate gamer who stays up-to-date with the
+                latest trends in the industry and enjoys
+                participating in online tournaments.
+            </p>
+        </div>
 
-    <div class="portfolio">
-      <!-- Portfolio item 1-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work1.jpg" alt="" class="portfolio__img">
-      </a>
+        <img src="img/andrea_corporate.jpg" alt="A picture of Andrea in a corporate setting" class="about-me__img">
+    </section>
 
-      <!-- Portfolio item 2-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work2.jpg" alt="" class="portfolio__img">
-      </a>
+    <!-- Services -->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">Experience</h2>
+        <div class="services">
+            <!-- Service -->
+            <div class="service">
+                <h3>Sr. DevOps</h3>
+                <h7>07/2022 – Present</h7>
+                <p>
+                    • Serve as the primary point of contact for the internet banking system, implementing new
+                    enhancements while also providing technical support and maintenance.
+                </p>
+                <p>
+                    • Analyse and optimise the performance of internal & external applications.
+                </p>
+                <p>
+                    • Maintain and document all systems and processes, ensuring smooth operation and quick resolution of
+                    any issues.
+                </p>
+            </div>
+            <!-- Service -->
+            <div class="service">
+                <h3>DevOps</h3>
+                <h7>03/2019 – 07/2022</h7>
+                <p>
+                    • Served as the primary point of contact for the internet banking system. Provided technical
+                    support, documentation, and deployment of enhancements.
+                </p>
+                <p>
+                    • Documented and supported all systems and processes, enabling efficient resolution of any issues.
+                </p>
+            </div>
 
-      <!-- Portfolio item 3-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work3.jpg" alt="" class="portfolio__img">
-      </a>
+        </div>
+    </section>
 
-      <!-- Portfolio item 4-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work4.jpg" alt="" class="portfolio__img">
-      </a>
 
-      <!-- Portfolio item 5-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work5.jpg" alt="" class="portfolio__img">
-      </a>
+    <!-- My Portfolio -->
 
-      <!-- Portfolio item 6-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work6.jpg" alt="" class="portfolio__img">
-      </a>
+    <!-- <section class="my-portfolio" id="work">
+        <h2 class="section__title">My Work</h2>
+        <p class="section__subtitle">W.I.P</p>
+        <div class="portfolio">
+        </div>
+    </section> -->
 
-      <!-- Portfolio item 7-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work7.jpg" alt="" class="portfolio__img">
-      </a>
-      <!-- Portfolio item 8-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work8.jpg" alt="" class="portfolio__img">
-      </a>
-
-      <!-- Portfolio item 9-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work9.jpg" alt="" class="portfolio__img">
-      </a>
-
-      <!-- Portfolio item 10-->
-      <a href="#" class="portfolio__item">
-        <img src="img/work/work10.jpg" alt="" class="portfolio__img">
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer-->
-  <footer class="footer">
-    <a href="mailto:andrea.bugeja@hotmail.com?subject=feedback" class="footer__link">
-      Contact me @ andrea.bugeja@hotmail.com
-    </a>
-    <ul class="social-list">
-      <li class="social-list__item">
-        <a class="social-list__link" href="https://twitch.tv/arogan178">
-          <i class="fab fa-twitch"></i>
+    <!-- Footer-->
+    <footer class="footer">
+        <a href="mailto:andrea.bugeja@hotmail.com?subject=feedback" class="footer__link">
+            Contact me
         </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link" href="https://youtube.com/arogan178">
-          <i class="fab fa-youtube"></i>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link" href="https://reddit.com">
-          <i class="fab fa-reddit-square"></i>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link" href="https://facebook.com">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-      </li>
-    </ul>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/andrea-bugeja/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/arogan178">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
 
-    <script src="js/index.js"></script>
-    <script src="js/toggle.js"></script>
-    <script src="js/splash.js"></script>
-  </footer>
+        <script src="js/index.js"></script>
+        <script src="js/toggle.js"></script>
+        <script src="js/splash.js"></script>
+    </footer>
 </body>
 
 </html>
