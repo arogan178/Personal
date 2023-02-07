@@ -2,7 +2,7 @@ const toggle = document.getElementById('toggle-input');
 const lightIcon = document.getElementById('light-icon');
 const darkIcon = document.getElementById('dark-icon');
 
-function setTheme (theme, persist = false) {
+function setTheme(theme, persist = false) {
   const on = theme;
   const off = theme === 'light' ? 'dark' : 'light';
 
@@ -11,11 +11,11 @@ function setTheme (theme, persist = false) {
   htmlEl.classList.remove(off);
 
   if (persist) {
-   localStorage.setItem('preferred-theme', theme);
+    localStorage.setItem('preferred-theme', theme);
   }
 }
 
-function updateUI (theme) {
+function updateUI(theme) {
   toggle.checked = theme === 'light';
 
   /* Show the right icon */
