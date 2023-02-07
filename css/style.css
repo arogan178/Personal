@@ -323,6 +323,7 @@ input[type=checkbox]:checked~.splashImage {
 .theme__logo {
     display: block;
     padding: 0.5em;
+    
 
 }
 
