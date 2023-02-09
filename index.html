@@ -13,61 +13,62 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<header>
+    <!-- <div class = "splash__page">
+        <input id="clickScroll" type="checkbox" class="clickScroll"></input>
+        <div class="splashImage" id="splashImage">
+            <h1>Welcome</h1>
+            <label class="splash__btn" for="clickScroll">
+                <div class="splash__btn">
+                    <i class="fas fa-angle-double-down"></i>
+                </div>
 
-<body>
-    <header>
-        <div>
-            <input id="clickScroll" type="checkbox" class="clickScroll"></input>
-            <div class="splashImage" id="splashImage">
-                <h1>Welcome</h1>
-                <label class="splash__btn" for="clickScroll">
-                    <div class="splash__btn">
-                        <i class="fas fa-angle-double-down"></i>
-                    </div>
+            </label>
+        </div>
+    </div> -->
 
+    <div class="header__bar">
+        <div class="theme__selector">
+            <div class="logo__toggle-container">
+                <div class="theme__logo">
+                    <i class="fas fa-adjust"></i>
+                </div>
+
+                <label class="toggle-switch" for="toggle-input">
+                    <input id="toggle-input" type="checkbox">
+                    <div class="toggle-switch__control"></div>
                 </label>
             </div>
         </div>
-
-        <div class="header__bar">
-            <div class="theme__selector">
-                <div class="logo__toggle-container">
-                    <div class="theme__logo">
-                        <i class="fas fa-adjust"></i>
-                    </div>
-
-                    <label class="toggle-switch" for="toggle-input">
-                        <input id="toggle-input" type="checkbox">
-                        <div class="toggle-switch__control"></div>
-                    </label>
+        <div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <div class="hamburger__icon">
+                    <span class="hamburger"></span>
                 </div>
-            </div>
-            <div>
-                <button class="nav-toggle" aria-label="toggle navigation">
-                    <div class="hamburger__icon">
-                        <span class="hamburger"></span>
-                    </div>
 
-                </button>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
-                        <li class="nav__list"><a href="#services" class="nav__link">My Services</a></li>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__list"><a href="#about" class="nav__link">About Me</a></li>
+                    <li class="nav__list"><a href="#services" class="nav__link">Experience</a></li>
 
-                        <!-- <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li> -->
-                    </ul>
-                </nav>
-            </div>
+                    <!-- <li class="nav__list"><a href="#work" class="nav__link">My Work</a></li> -->
+                </ul>
+            </nav>
         </div>
-        </div>
-    </header>
+    </div>
+    </div>
+</header>
+
+<body>
+
 
     <!-- Introduction -->
 
     <section class="intro" id="home">
         <h1 class="section__title section__title--intro">
-            Hi, I'm <strong>Andrea Bugeja</strong>
+            Hi, I'm <strong id="Name" data-value="Andrea Bugeja">Andrea Bugeja</strong>
         </h1>
         <p class="section__subtitle section__subtitle--intro"> Welcome! </p>
         <img src="img/me1.jpg" alt="A picture of sexy human" class="intro__img">
@@ -166,7 +167,7 @@
 
         <script src="js/index.js"></script>
         <script src="js/toggle.js"></script>
-        <script src="js/splash.js"></script>
+        <script src="js/nameRandomizer.js"></script>
     </footer>
 </body>
 
