@@ -17,15 +17,6 @@ function setTheme(theme, persist = false) {
 
 function updateUI(theme) {
   toggle.checked = theme === 'light';
-
-  /* Show the right icon */
-  if (theme === 'light') {
-    lightIcon.classList.add('active');
-    darkIcon.classList.remove('active');
-  } else {
-    darkIcon.classList.add('active');
-    lightIcon.classList.remove('active');
-  }
 }
 
 toggle.addEventListener('click', () => {
