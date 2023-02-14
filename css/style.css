@@ -118,7 +118,6 @@ strong {
     position: relative;
     background: #b8a8a8;
     cursor: pointer;
-    margin: 50px auto;
 }
 
 .toggle-switch__control::after {
@@ -209,8 +208,6 @@ h3 {
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
 }
-
-
 
 /* Header */
 
@@ -401,17 +398,18 @@ h3 {
 }
 
 .about-me,
-.my-experience {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 1s ease-in-out;
+.my-experience,
+.skills {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
 }
 
 .about-me.is-visible,
 .my-experience.is-visible {
-  opacity: 1;
-  visibility: visible;
-  padding-top: 5em;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 5em;
 }
 
 /* About me Section */
