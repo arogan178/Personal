@@ -49,12 +49,10 @@ function sectionVisibility() {
     });
 
     const aboutMe = document.querySelector(".about-me");
-    const education = document.querySelector(".my-education");
     const myExperience = document.querySelector(".my-experience");
-    
+
 
     observer.observe(aboutMe);
-    observer.observe(education);
     observer.observe(myExperience);
 }
 
