@@ -9,13 +9,14 @@
     --ff-secondary: 'Source Code Pro', monospace;
     --fw-reg: 300;
     --fw-bold: 900;
-    --clr-light: #D4D4C4;
+    --clr-light: #FDF5DF;
     --clr-dark: #111111;
-    --clr-accent: #9D1B2E;
+    --clr-accent: #ad0e0e;
     --clr-darkSection: #1f1f1f;
-    --fs-h1: 3rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.25rem;
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
     --fs-body: 1rem;
     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.5), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
     --background-color: var(--clr-light);
@@ -36,6 +37,7 @@
         --fs-h1: 4.5rem;
         --fs-h2: 3.75rem;
         --fs-h3: 1.5rem;
+        --fs-h4: 1.25rem;
         --fs-body: 1.125rem;
     }
 }
@@ -59,11 +61,12 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0em;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--background-color);
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -71,14 +74,15 @@ html {
 }
 
 body {
-    background: var(--background-color);
+    background-color: var(--background-color);
     color: var(--font-color);
     margin: 0;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
-    line-height: 1.6;
-    transition: background 500ms ease-in-out, color 250ms ease-in-out;
+    line-height: 1.5;
+    transition: background-color 500ms ease-in-out, color 250ms ease-in-out;
     overflow-y: scroll;
+    overflow-x: hidden;
     user-select: none;
     cursor: default;
 }
@@ -96,12 +100,7 @@ strong {
     font-weight: var(--fw-bold)
 }
 
-:focus {
-    outline: 2px solid var(--clr-accent);
-    outline-offset: 3px;
-}
-
-/*BTNS*/
+/* Buttons */
 
 .toggle-switch {
     display: block;
@@ -137,6 +136,31 @@ strong {
     left: 21px;
 }
 
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: -60px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    filter: invert(1);
+    color: var(--font-color);
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    z-index: 999;
+}
+
+#back-to-top.btn-show {
+    right: 30px;
+}
+
+.btn-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 /*Typography*/
 
 strong#Name {
@@ -150,13 +174,13 @@ strong#Name::after {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2.5px;
+    height: 2px;
     bottom: 0;
     left: 0;
     background-color: var(--background-color);
     filter: invert(1);
     transform-origin: bottom right;
-    transition: transform 0.5s ease-out;
+    transition: transform 0.75s ease-out;
     z-index: -1;
 }
 
@@ -167,9 +191,10 @@ strong#Name:hover::after {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     line-height: 1;
-    margin: 0;
+    margin: 5px;
 }
 
 h1 {
@@ -182,6 +207,10 @@ h2 {
 
 h3 {
     font-size: var(--fs-h3)
+}
+
+h4 {
+    font-size: var(--fs-h4)
 }
 
 .section__title {
@@ -212,7 +241,7 @@ h3 {
 /* Header */
 
 .header__bar {
-    background: #802d2d;
+    background: #7f1e1e;
     display: flex;
     justify-content: space-between;
     padding: 0.5em;
@@ -222,6 +251,14 @@ h3 {
     box-shadow: var(--bs);
     height: 3em;
     opacity: 0;
+    transition: all 0.7s ease-in-out;
+    visibility: hidden;
+}
+
+.header__bar.is-visible {
+    height: 3em;
+    opacity: 1;
+    visibility: visible;
 }
 
 .theme__selector {
@@ -242,10 +279,9 @@ h3 {
 
 .logo__toggle-container {
     display: flex;
-    /* flex-direction: row; */
-    align-items: center;
+    align-items: baseline;
     position: absolute;
-    top: 0.5em;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -357,7 +393,7 @@ h3 {
 
 .intro {
     padding-top: 15%;
-    padding-bottom: 15%;
+    padding-bottom: 17%;
 }
 
 .intro__img {
@@ -401,7 +437,7 @@ h3 {
 .my-experience {
     opacity: 0;
     visibility: hidden;
-    transition: all 1s ease-in-out;
+    transition: all 0.7s ease-in-out;
 }
 
 .about-me.is-visible,
@@ -456,7 +492,6 @@ h3 {
 
 .my-experience {
     margin-top: 5em;
-    background-color: var(--clr-darkSection);
     background-image: url(../img/experience-bg.jpg);
     background-size: cover;
     background-blend-mode: multiply;
@@ -504,7 +539,6 @@ h3 {
         margin-left: 2em;
     }
 }
-
 
 
 /* Education Section */

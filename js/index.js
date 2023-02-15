@@ -20,28 +20,24 @@ function navToggle() {
 }
 
 function headerBarOpacity() {
-    const headerBar = document.querySelector('.header__bar');
-    const themeSelector = document.querySelector('.theme__selector');
-    const navButton = document.querySelector('.nav-toggle');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (window.scrollY > 450) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    });
 
-    //Vary opacity of header bar based on scroll position
-    let scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    headerBar.style.opacity = Math.min(1, 0 + (scrollPos / 500));
+    const header = document.querySelector(".header__bar");
 
-    //if opactiy <70 disable functionality
-    if (headerBar.style.opacity <= 0.7) {
-        themeSelector.style.pointerEvents = 'none';
-        navButton.style.pointerEvents = 'none';
-    } else {
-        themeSelector.style.pointerEvents = 'auto';
-        navButton.style.pointerEvents = 'auto';
-    }
+    observer.observe(header);
 }
 
 function sectionVisibility() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio >= 0.8) {
+            if (entry.intersectionRatio >= 0.7) {
                 entry.target.classList.add("is-visible");
                 observer.unobserve(entry.target);
             }
@@ -56,6 +52,27 @@ function sectionVisibility() {
     observer.observe(myExperience);
 }
 
+function createBackToTopButton() {
+    const backToTopBtn = document.querySelector("#back-to-top");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add("btn-show");
+            backToTopBtn.classList.remove("btn-hide");
+        } else {
+            backToTopBtn.classList.remove("btn-show");
+            backToTopBtn.classList.add("btn-hide");
+        }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
 window.onscroll = function () {
     headerBarOpacity();
     sectionVisibility();
@@ -64,4 +81,7 @@ window.onscroll = function () {
 window.onload = function () {
     headerBarOpacity();
     navToggle();
+    createBackToTopButton();
 };
+
+

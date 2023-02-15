@@ -4,14 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea's Humble Abode</title>
+
     <script src="https://kit.fontawesome.com/19fd722078.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/normalize.css">
+
+
+    <title>The Andrea Experience</title>
+
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="img/favicon.ico">
 </head>
 <header>
     <div class="header__bar">
@@ -27,6 +31,7 @@
                 </label>
             </div>
         </div>
+
         <div class="nav__button">
             <button class="nav-toggle" aria-label="toggle navigation">
                 <div class="hamburger__icon">
@@ -48,7 +53,9 @@
 </header>
 
 <body>
-
+    <button id="back-to-top" class="btn-hide">
+        <i class="fas fa-chevron-up"></i>
+    </button>
     <!-- Introduction -->
 
     <section class="intro" id="home">
@@ -67,7 +74,8 @@
 
         <div class="about-me__body">
             <p>
-                Well as you might have guessed, I'm <strong>Andrea</strong>, currently pursuing a Master's degree in
+                Well as you might have guessed, I'm <strong id="Name">Andrea</strong>, currently pursuing a Master's
+                degree in
                 Artificial Intelligence at the University of Malta.
             </p>
 
@@ -95,7 +103,7 @@
             <!-- Experience 1 -->
             <div class="service">
                 <h3>Sr. DevOps</h3>
-                <h7>07/2022 – Present</h7>
+                <h4>07/2022 – Present</h4>
                 <p>
                     • Serve as the primary point of contact for the internet banking system, implementing new
                     enhancements while also providing technical support and maintenance.
@@ -111,7 +119,7 @@
             <!-- Experience 2 -->
             <div class="service">
                 <h3>DevOps</h3>
-                <h7>03/2019 – 07/2022</h7>
+                <h4>03/2019 – 07/2022</h4>
                 <p>
                     • Served as the primary point of contact for the internet banking system. Provided technical
                     support, documentation, and deployment of enhancements.
