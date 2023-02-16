@@ -45,11 +45,14 @@ function sectionVisibility() {
     });
 
     const aboutMe = document.querySelector(".about-me");
-    const myExperience = document.querySelector(".my-experience");
+    const experience = document.querySelector(".my-experience");
+    const skills = document.querySelector(".my-skills");
 
 
     observer.observe(aboutMe);
-    observer.observe(myExperience);
+    observer.observe(experience);
+    observer.observe(skills); 
+    
 }
 
 function createBackToTopButton() {
@@ -82,6 +85,7 @@ window.onload = function () {
     headerBarOpacity();
     navToggle();
     createBackToTopButton();
+
 };
 
 

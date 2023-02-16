@@ -1,0 +1,59 @@
+/* ########### BUTTON CSS ########### */
+
+.toggle-switch {
+    display: block;
+}
+
+#toggle-input {
+    display: none;
+}
+
+.toggle-switch__control {
+    width: 40px;
+    height: 14px;
+    border-radius: 7px;
+    position: relative;
+    background: #b8a8a8;
+    cursor: pointer;
+}
+
+.toggle-switch__control::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: -1px;
+    top: -3px;
+    background: var(--toggle-color);
+    transition: left 0.25s;
+}
+
+#toggle-input:checked+.toggle-switch__control::after {
+    left: 21px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: -60px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    filter: invert(1);
+    color: var(--font-color);
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    z-index: 999;
+}
+
+#back-to-top.btn-show {
+    right: 30px;
+}
+
+.btn-hide {
+    opacity: 0;
+    pointer-events: none;
+}
