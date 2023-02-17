@@ -9,13 +9,32 @@
     transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
+.footer__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__dot {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--font-color);
+    margin: 0 0.5em;
+    transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
+}
+
 .footer a {
     color: inherit;
+    margin: 0 0.5em 0;
     text-decoration: none
 }
 
 .footer__link {
     font-weight: var(--fw-bold);
+    margin: 0 1em;
+    text-decoration: none;
 }
 
 .footer__link:hover,

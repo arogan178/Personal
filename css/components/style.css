@@ -10,20 +10,17 @@
     --fw-reg: 300;
     --fw-bold: 900;
     --clr-light: #FDF5DF;
-    --clr-dark: #111111;
+    --clr-dark: #121212;
     --clr-accent: #ad0e0e;
-    --clr-darkSection: #1f1f1f;
     --fs-h1: 3.5rem;
     --fs-h2: 3.25rem;
     --fs-h3: 1.5rem;
     --fs-h4: 1.125rem;
     --fs-body: 1rem;
-    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.5), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
+    --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0,0.5), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
     --background-color: var(--clr-light);
     --font-color: var(--clr-dark);
     --toggle-color: var(--clr-dark);
-    --section-color: var(--clr-darkSection);
-    scroll-behavior: smooth;
 }
 
 :root.dark {
@@ -56,6 +53,7 @@
     :root {
         --background-color: var(--clr-dark);
         --font-color: var(--clr-light);
+        
     }
 
     :root.light {
@@ -64,7 +62,7 @@
     }
 }
 
-/* ########### GENERAL STYLES CSS ########### */
+/* ###################### GENERAL STYLES CSS ################################# */
 
 html {
     scroll-behavior: smooth;
@@ -94,7 +92,7 @@ body {
     overflow-x: hidden;
     user-select: none;
     cursor: default;
-    transition: background-color 700ms ease-in-out, color 300ms ease-in-out
+    transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
 section {
@@ -103,7 +101,7 @@ section {
 
 img {
     display: block;
-    max-width: 100%
+    max-width: 90%;
 }
 
 strong {
@@ -112,7 +110,7 @@ strong {
 
 
 
-/* ########### TYPOGRAPHY CSS ########### */
+/* ###################### TYPOGRAPHY CSS ################################# */
 
 strong#Name {
     font-family: Source Code Pro, monospace;
@@ -191,7 +189,7 @@ h4 {
 }
 
 
-/* ########### INTRO SECTION CSS ########### */
+/* ###################### INTRO SECTION CSS ################################# */
 
 .intro {
     padding-top: 15%;
@@ -200,6 +198,8 @@ h4 {
 
 .intro__img {
     box-shadow: var(--bs);
+    border-top-right-radius: 4.5em;
+    border-bottom-left-radius: 4.5em;
 }
 
 .section__subtitle--intro {
@@ -251,7 +251,7 @@ h4 {
     padding-top: 5em;
 }
 
-/* ########### ABOUT ME SECTION CSS ########### */
+/* ###################### ABOUT ME SECTION CSS ################################# */
 
 .about-me {
 
@@ -263,6 +263,8 @@ h4 {
 
 .about-me__img {
     box-shadow: var(--bs);
+    border-top-left-radius: 2.5em;
+    border-bottom-right-radius: 2.5em;
 }
 
 @media (min-width:650px) {
@@ -295,7 +297,7 @@ h4 {
     }
 }
 
-/* ########### EXPERIENCE SECTION CSS ########### */
+/* ###################### EXPERIENCE SECTION CSS ################################# */
 
 .my-experience {
     margin-top: 2em;
@@ -343,7 +345,7 @@ h4 {
     }
 }
 
-/* ########### SKILLS SECTION CSS ########### */
+/* ###################### SKILLS SECTION CSS ################################# */
 
 .my-skills {
     max-width: 1000px;
@@ -364,6 +366,14 @@ h4 {
     margin: 0 7px 7px 0;
     font-size: var(--fs-h4);
     padding: 0.5em;
+    box-shadow: var(--bs);
+    transition: box-shadow 400ms ease-in-out;
+}
+
+.skill-item:hover {
+    box-shadow: none;
+    
+    transition: box-shadow 250ms ease-in-out;
 }
 
 @media (min-width: 650px) {

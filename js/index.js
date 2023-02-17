@@ -48,11 +48,10 @@ function sectionVisibility() {
     const experience = document.querySelector(".my-experience");
     const skills = document.querySelector(".my-skills");
 
-
     observer.observe(aboutMe);
     observer.observe(experience);
-    observer.observe(skills); 
-    
+    observer.observe(skills);
+
 }
 
 function createBackToTopButton() {
