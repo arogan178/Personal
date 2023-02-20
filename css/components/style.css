@@ -186,6 +186,7 @@ h4 {
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
+    color: var(--clr-light);
 }
 
 
