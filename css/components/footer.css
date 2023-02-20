@@ -1,59 +1,59 @@
 /* ########### FOOTER CSS ########### */
 
 .footer {
-    background: var(--background-color);
-    color: var(--font-color);
-    text-align: center;
-    padding: 0.5em;
-    font-size: var(--fs-h4);
-    transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
+  background: var(--background-color);
+  color: var(--font-color);
+  text-align: center;
+  padding: 0.5em;
+  font-size: var(--fs-h4);
+  transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
 .footer__links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer__dot {
-    display: inline-block;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    background-color: var(--font-color);
-    margin: 0 0.5em;
-    transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: var(--font-color);
+  margin: 0 0.5em;
+  transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
 .footer a {
-    color: inherit;
-    margin: 0 0.5em 0;
-    text-decoration: none
+  color: inherit;
+  margin: 0 0.5em 0;
+  text-decoration: none;
 }
 
 .footer__link {
-    font-weight: var(--fw-bold);
-    margin: 0 1em;
-    text-decoration: none;
+  font-weight: var(--fw-bold);
+  margin: 0 1em;
+  text-decoration: none;
 }
 
 .footer__link:hover,
 .social-list__link:hover {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .footer__link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .social-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0.5em 0 0;
-    padding: 0.1px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0 0;
+  padding: 0.1px;
 }
 
 .social-list__link {
-    padding: 0.5em;
+  padding: 0.5em;
 }

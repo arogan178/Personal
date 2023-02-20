@@ -1,27 +1,25 @@
 /* ########### BUTTON CSS ########### */
 
-
-
 #back-to-top {
-    position: fixed;
-    bottom: 50px;
-    right: -60px;
-    padding: 10px 15px;
-    border: 0;
-    border-radius: 10px;
-    background-color: var(--background-color);
-    filter: invert(1) drop-shadow(0 0 0.75rem rgb(0, 0, 0));;
-    color: var(--font-color);
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-    z-index: 999;
+  position: fixed;
+  bottom: 50px;
+  right: -60px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 10px;
+  background-color: var(--background-color);
+  filter: invert(1) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  z-index: 999;
 }
 
 #back-to-top.btn-show {
-    right: 30px;
+  right: 30px;
 }
 
 .btn-hide {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }

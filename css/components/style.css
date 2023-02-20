@@ -1,391 +1,384 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --ff-primary: 'Source Sans Pro', sans-serif;
-    --ff-secondary: 'Source Code Pro', monospace;
-    --fw-reg: 300;
-    --fw-bold: 900;
-    --clr-light: #FDF5DF;
-    --clr-dark: #121212;
-    --clr-accent: #ad0e0e;
-    --fs-h1: 3.5rem;
-    --fs-h2: 3.25rem;
-    --fs-h3: 1.5rem;
-    --fs-h4: 1.125rem;
-    --fs-body: 1rem;
-    --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0,0.5), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
-    --background-color: var(--clr-light);
-    --font-color: var(--clr-dark);
-    --toggle-color: var(--clr-dark);
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+  --fw-reg: 300;
+  --fw-bold: 900;
+  --clr-light: #fdf5df;
+  --clr-dark: #121212;
+  --clr-accent: #ad0e0e;
+  --fs-h1: 3.5rem;
+  --fs-h2: 3.25rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.125rem;
+  --fs-body: 1rem;
+  --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0, 0.5),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
+  --background-color: var(--clr-light);
+  --font-color: var(--clr-dark);
+  --toggle-color: var(--clr-dark);
 }
 
 :root.dark {
-    --background-color: var(--clr-dark);
-    --toggle-color: var(--clr-light);
-    --font-color: var(--clr-light);
+  --background-color: var(--clr-dark);
+  --toggle-color: var(--clr-light);
+  --font-color: var(--clr-light);
 }
 
 @media (min-width: 900px) {
-    :root {
-        --fs-h1: 4.5rem;
-        --fs-h2: 3.5rem;
-        --fs-h3: 2rem;
-        --fs-h4: 1.5rem;
-        --fs-body: 1.25rem;
-    }
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.5rem;
+    --fs-h3: 2rem;
+    --fs-h4: 1.5rem;
+    --fs-body: 1.25rem;
+  }
 }
 
 @media (max-width: 350px) {
-    :root {
-        --fs-h1: 2rem;
-        --fs-h2: 1.5rem;
-        --fs-h3: 1rem;
-        --fs-h4: 1.125rem;
-        --fs-body: 0.75rem;
-    }
+  :root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1rem;
+    --fs-h4: 1.125rem;
+    --fs-body: 0.75rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: var(--clr-dark);
-        --font-color: var(--clr-light);
-        
-    }
+  :root {
+    --background-color: var(--clr-dark);
+    --font-color: var(--clr-light);
+  }
 
-    :root.light {
-        --background-color: var(--clr-light);
-        --font-color: var(--clr-dark);
-    }
+  :root.light {
+    --background-color: var(--clr-light);
+    --font-color: var(--clr-dark);
+  }
 }
 
 /* ###################### GENERAL STYLES CSS ################################# */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-    width: 0em;
+  width: 0em;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--background-color);
-
+  background: var(--background-color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--clr-accent);
+  background: var(--clr-accent);
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--font-color);
-    margin: 0;
-    font-family: var(--ff-primary);
-    font-size: var(--fs-body);
-    line-height: 1.5;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    user-select: none;
-    cursor: default;
-    transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  user-select: none;
+  cursor: default;
+  transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
 section {
-    padding: 1.5em 2em;
+  padding: 1.5em 2em;
 }
 
 img {
-    display: block;
-    max-width: 90%;
+  display: block;
+  max-width: 90%;
 }
 
 strong {
-    font-weight: var(--fw-bold)
+  font-weight: var(--fw-bold);
 }
-
-
 
 /* ###################### TYPOGRAPHY CSS ################################# */
 
 strong#Name {
-    font-family: Source Code Pro, monospace;
-    position: relative;
-    padding-bottom: 0.2em;
+  font-family: Source Code Pro, monospace;
+  position: relative;
+  padding-bottom: 0.2em;
 }
 
 strong#Name::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--background-color);
-    filter: invert(1);
-    transform-origin: bottom right;
-    transition: transform 0.5s ease-out;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--background-color);
+  filter: invert(1);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+  z-index: -1;
 }
 
 strong#Name:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    line-height: 1;
-    margin: 5px;
+  line-height: 1;
+  margin: 5px;
 }
 
 h1 {
-    font-size: var(--fs-h1)
+  font-size: var(--fs-h1);
 }
 
 h2 {
-    font-size: var(--fs-h2)
+  font-size: var(--fs-h2);
 }
 
 h3 {
-    font-size: var(--fs-h3)
+  font-size: var(--fs-h3);
 }
 
 h4 {
-    font-size: var(--fs-h4)
+  font-size: var(--fs-h4);
 }
 
 .section__title {
-    margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .section__title--intro {
-    font-weight: var(--fw-reg);
+  font-weight: var(--fw-reg);
 }
 
 .section__title--intro strong {
-    display: block;
+  display: block;
 }
 
 .section__subtitle {
-    margin: auto;
-    font-size: var(--fs-h3);
+  margin: auto;
+  font-size: var(--fs-h3);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about,
 .section__subtitle--skills {
-    background: var(--clr-accent);
-    padding: .25em 1em;
-    font-family: var(--ff-secondary);
-    margin-bottom: 1em;
-    color: var(--clr-light);
+  background: var(--clr-accent);
+  padding: 0.25em 1em;
+  font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+  color: var(--clr-light);
 }
-
 
 /* ###################### INTRO SECTION CSS ################################# */
 
 .intro {
-    padding-top: 15%;
-    padding-bottom: 17%;
+  padding-top: 15%;
+  padding-bottom: 17%;
 }
 
 .intro__img {
-    box-shadow: var(--bs);
-    border-top-right-radius: 4.5em;
-    border-bottom-left-radius: 4.5em;
+  box-shadow: var(--bs);
+  border-top-right-radius: 4.5em;
+  border-bottom-left-radius: 4.5em;
 }
 
 .section__subtitle--intro {
-    display: inline-block;
+  display: inline-block;
 }
 
 @media (min-width: 650px) {
-    .intro {
-        display: grid;
-        width: min-content;
-        margin: 0 auto;
-        grid-column-gap: 1em;
-        grid-template-areas: "img title""img subtitle";
-        grid-template-columns: min-content max-content;
-    }
+  .intro {
+    display: grid;
+    width: min-content;
+    margin: 0 auto;
+    grid-column-gap: 1em;
+    grid-template-areas: "img title" "img subtitle";
+    grid-template-columns: min-content max-content;
+  }
 
-    .intro__img {
-        grid-area: img;
-        min-width: 250px;
-        position: relative;
-        z-index: 2;
-    }
+  .intro__img {
+    grid-area: img;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+  }
 
-    .section__subtitle--intro {
-        align-self: start;
-        grid-column: -1/1;
-        grid-row: 2;
-        text-align: right;
-        position: relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
-
-    }
+  .section__subtitle--intro {
+    align-self: start;
+    grid-column: -1/1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+  }
 }
 
 .about-me,
 .my-experience,
 .my-skills {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 700ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 700ms ease-in-out;
 }
 
 .about-me.is-visible,
 .my-experience.is-visible,
 .my-skills.is-visible {
-    opacity: 1;
-    visibility: visible;
-    padding-top: 5em;
+  opacity: 1;
+  visibility: visible;
+  padding-top: 5em;
 }
 
 /* ###################### ABOUT ME SECTION CSS ################################# */
 
 .about-me {
-
-    margin: 0 auto;
-    padding-top: 10em;
-    text-align: justify;
-    text-justify: inter-word;
+  margin: 0 auto;
+  padding-top: 10em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-me__img {
-    box-shadow: var(--bs);
-    border-top-left-radius: 2.5em;
-    border-bottom-right-radius: 2.5em;
+  box-shadow: var(--bs);
+  border-top-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
 }
 
-@media (min-width:650px) {
-    .about-me {
-        max-width: 1000px;
-        display: grid;
-        grid-template-columns: 1fr 200px;
-        grid-template-areas: "title img""subtitle img""text img";
-        grid-column-gap: 2em;
-    }
+@media (min-width: 650px) {
+  .about-me {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas: "title img" "subtitle img" "text img";
+    grid-column-gap: 2em;
+  }
 
-    .section__title--about {
-        grid-area: title;
-    }
+  .section__title--about {
+    grid-area: title;
+  }
 
-    .section__subtitle--about {
-        grid-column: 1/-1;
-        grid-row: 2;
-        position: relative;
-        left: -1em;
-        width: calc(100% + 3em);
-        padding-left: 1em;
-        padding-right: calc(200px + 4em);
-    }
+  .section__subtitle--about {
+    grid-column: 1/-1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 3em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+  }
 
-    .about-me__img {
-        grid-area: img;
-        position: relative;
-        z-index: 2;
-    }
+  .about-me__img {
+    grid-area: img;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 /* ###################### EXPERIENCE SECTION CSS ################################# */
 
 .my-experience {
-    margin-top: 2em;
-    background-color: var(--background-color);
-    text-align: justify;
-    text-justify: inter-word;
+  margin-top: 2em;
+  background-color: var(--background-color);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .section__title--experience {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
 .section__title--experience::after,
 .section__title--experience::before {
-    content: '';
-    display: block;
-    width: 20vh;
-    height: 1px;
-    margin: 0.5em auto 0.5em;
-    background: var(--clr-light);
-    opacity: 0.25;
+  content: "";
+  display: block;
+  width: 20vh;
+  height: 1px;
+  margin: 0.5em auto 0.5em;
+  background: var(--clr-light);
+  opacity: 0.25;
 }
 
 .experiences {
-    margin-bottom: 4em;
-    /*  margin-left: 4em; */
+  margin-bottom: 4em;
+  /*  margin-left: 4em; */
 }
 
 .job {
-    max-width: 450px;
-    margin: 0 auto;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 @media (min-width: 650px) {
-    .experiences {
-        display: flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .experiences {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .job+.job {
-        margin-left: 2em;
-    }
+  .job + .job {
+    margin-left: 2em;
+  }
 }
 
 /* ###################### SKILLS SECTION CSS ################################# */
 
 .my-skills {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: var(--background-color);
-    text-align: left;
-    padding: 15px;
-    margin-top: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--background-color);
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-
 .skill-item {
-    border: 1px solid;
-    border-radius: 2px;
-    display: inline-block;
-    font-size: 12px;
-    margin: 0 7px 7px 0;
-    font-size: var(--fs-h4);
-    padding: 0.5em;
-    box-shadow: var(--bs);
-    transition: box-shadow 400ms ease-in-out;
+  border: 1px solid;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  font-size: var(--fs-h4);
+  padding: 0.5em;
+  box-shadow: var(--bs);
+  transition: box-shadow 400ms ease-in-out;
 }
 
 .skill-item:hover {
-    box-shadow: none;
-    
-    transition: box-shadow 250ms ease-in-out;
+  box-shadow: none;
+
+  transition: box-shadow 250ms ease-in-out;
 }
 
 @media (min-width: 650px) {
-    .my-skills {
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .my-skills {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .skill-item {
-        margin-left: 0.5em;
-        display: inline-block;
-    }
+  .skill-item {
+    margin-left: 0.5em;
+    display: inline-block;
+  }
 }
