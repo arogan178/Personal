@@ -45,9 +45,9 @@
 }
 
 .toggle-switch__control {
-  width: 40px;
-  height: 14px;
-  border-radius: 7px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
   position: relative;
   background: #b8a8a8;
   cursor: pointer;
@@ -56,9 +56,9 @@
 .toggle-switch__control::after {
   content: "";
   display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
   position: absolute;
   left: -1px;
   top: -3px;
@@ -67,7 +67,7 @@
 }
 
 #toggle-input:checked + .toggle-switch__control::after {
-  left: 21px;
+  left: 15px;
 }
 
 /* ###################### NAV MENU CSS ################################# */

@@ -10,7 +10,7 @@
   --fw-reg: 300;
   --fw-bold: 900;
   --clr-light: #fdf5df;
-  --clr-dark: #121212;
+  --clr-dark: #1f1f1f;
   --clr-accent: #ad0e0e;
   --fs-h1: 3.5rem;
   --fs-h2: 3.25rem;
@@ -96,6 +96,7 @@ body {
 
 section {
   padding: 1.5em 2em;
+  backdrop-filter: blur(15px);
 }
 
 img {
@@ -296,7 +297,6 @@ h4 {
 
 .my-experience {
   margin-top: 2em;
-  background-color: var(--background-color);
   text-align: justify;
   text-justify: inter-word;
 }
@@ -346,7 +346,6 @@ h4 {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  background-color: var(--background-color);
   text-align: left;
   padding: 15px;
   margin-top: 30px;
