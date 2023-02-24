@@ -158,6 +158,7 @@ h3 {
 
 h4 {
   font-size: var(--fs-h4);
+  pointer-events: none;
 }
 
 .section__title {
