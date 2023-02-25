@@ -320,14 +320,15 @@ h4 {
 
 .experiences {
   margin-bottom: 4em;
-  /*  margin-left: 4em; */
 }
 
 .job {
   max-width: 450px;
   margin: 0 auto;
 }
-
+.job-desc li {
+  margin-bottom: 1em;
+}
 @media (min-width: 650px) {
   .experiences {
     display: flex;

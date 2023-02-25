@@ -4,7 +4,7 @@
   background: var(--background-color);
   color: var(--font-color);
   text-align: center;
-  padding: 0.5em;
+  padding: 1em;
   font-size: var(--fs-h4);
   transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
