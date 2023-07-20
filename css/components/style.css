@@ -323,13 +323,13 @@ h4 {
 }
 
 .job {
-  max-width: 450px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .job-desc li {
   margin-bottom: 1em;
 }
-@media (min-width: 650px) {
+@media (min-width: 800px) {
   .experiences {
     display: flex;
     max-width: 1000px;
