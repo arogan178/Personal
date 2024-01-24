@@ -1,10 +1,12 @@
-const toggle = document.getElementById("toggle-input");
-const lightIcon = document.getElementById("light-icon");
-const darkIcon = document.getElementById("dark-icon");
+const LIGHT_THEME = "light";
+const DARK_THEME = "dark";
 
+const toggle = document.getElementById("toggle-input");
+
+// Toggles theme. 
 function setTheme(theme, persist = false) {
   const on = theme;
-  const off = theme === "light" ? "dark" : "light";
+  const off = theme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
 
   const htmlEl = document.documentElement;
   htmlEl.classList.add(on);
@@ -15,20 +17,21 @@ function setTheme(theme, persist = false) {
   }
 }
 
+// Updates UI based on theme.
 function updateUI(theme) {
-  toggle.checked = theme === "light";
+  toggle.checked = theme === LIGHT_THEME;
 }
 
 toggle.addEventListener("click", () => {
-  const theme = toggle.checked ? "light" : "dark";
+  const theme = toggle.checked ? LIGHT_THEME : DARK_THEME;
   setTheme(theme, true);
   updateUI(theme);
 });
 
-/* Set theme on load */
+// Sets theme based on OS preference or previously selected theme.
 const osPreference = window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "dark"
-  : "light";
+  ? DARK_THEME
+  : LIGHT_THEME;
 const preferredTheme = localStorage.getItem("preferred-theme") || osPreference;
 setTheme(preferredTheme, false);
 updateUI(preferredTheme);

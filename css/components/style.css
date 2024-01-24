@@ -1,35 +1,48 @@
+/* 
+  Apply box-sizing to all elements, 
+  including pseudo-elements 
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 
+  Define global CSS variables 
+*/
 :root {
-  --ff-primary: "Source Sans Pro", sans-serif;
-  --ff-secondary: "Source Code Pro", monospace;
-  --fw-reg: 300;
-  --fw-bold: 900;
-  --clr-light: #fdf5df;
-  --clr-dark: #1a1a1a;
-  --clr-accent: #ad0e0e;
-  --fs-h1: 3.5rem;
-  --fs-h2: 3.25rem;
-  --fs-h3: 1.5rem;
-  --fs-h4: 1.125rem;
-  --fs-body: 1rem;
+  --ff-primary: "Source Sans Pro", sans-serif; /* Primary font family */
+  --ff-secondary: "Source Code Pro", monospace; /* Secondary font family */
+  --fw-reg: 300; /* Regular font weight */
+  --fw-bold: 900; /* Bold font weight */
+  --clr-light: #fdf5df; /* Light color */
+  --clr-dark: #1a1a1a; /* Dark color */
+  --clr-accent: #ad0e0e; /* Accent color */
+  --fs-h1: 3.5rem; /* H1 font size */
+  --fs-h2: 3.25rem; /* H2 font size */
+  --fs-h3: 1.5rem; /* H3 font size */
+  --fs-h4: 1.125rem; /* H4 font size */
+  --fs-body: 1rem; /* Body font size */
   --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0, 0.5),
-    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25);
-  --background-color: var(--clr-light);
-  --font-color: var(--clr-dark);
-  --toggle-color: var(--clr-dark);
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25); /* Box shadow */
+  --background-color: var(--clr-light); /* Background color */
+  --font-color: var(--clr-dark); /* Font color */
+  --toggle-color: var(--clr-dark); /* Toggle color */
 }
 
+/* 
+  Define CSS variables for dark mode 
+*/
 :root.dark {
   --background-color: var(--clr-dark);
   --toggle-color: var(--clr-light);
   --font-color: var(--clr-light);
 }
 
+/* 
+  Media query for screens wider than 900px 
+*/
 @media (min-width: 900px) {
   :root {
     --fs-h1: 4.5rem;
@@ -40,16 +53,9 @@
   }
 }
 
-@media (max-width: 350px) {
-  :root {
-    --fs-h1: 2rem;
-    --fs-h2: 1.5rem;
-    --fs-h3: 1rem;
-    --fs-h4: 1.125rem;
-    --fs-body: 0.75rem;
-  }
-}
-
+/* 
+  Media query for screens narrower than 650px 
+*/
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: var(--clr-dark);
@@ -59,6 +65,19 @@
   :root.light {
     --background-color: var(--clr-light);
     --font-color: var(--clr-dark);
+  }
+}
+
+/* 
+  Media query for screens narrower than 350px 
+*/
+@media (max-width: 350px) {
+  :root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1rem;
+    --fs-h4: 1.125rem;
+    --fs-body: 0.75rem;
   }
 }
 
