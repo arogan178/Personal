@@ -1,3 +1,4 @@
+// Toggles navigation open/close and manages body overflow.
 function navToggle() {
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelectorAll(".nav__link");
@@ -19,6 +20,7 @@ function navToggle() {
   });
 }
 
+// Manages header bar opacity based on scroll position. 
 function headerBarOpacity() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -34,6 +36,7 @@ function headerBarOpacity() {
   observer.observe(header);
 }
 
+// Manages visibility of sections based on viewport intersection.
 function sectionVisibility() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -44,15 +47,12 @@ function sectionVisibility() {
     });
   });
 
-  const aboutMe = document.querySelector(".about-me");
-  const experience = document.querySelector(".my-experience");
-  const skills = document.querySelector(".my-skills");
+  const sections = document.querySelectorAll(".section");
 
-  observer.observe(aboutMe);
-  observer.observe(experience);
-  observer.observe(skills);
+  sections.forEach(section => observer.observe(section));
 }
 
+// Creates back to top button and manages its visibility.
 function createBackToTopButton() {
   const backToTopBtn = document.querySelector("#back-to-top");
 
@@ -66,6 +66,7 @@ function createBackToTopButton() {
     }
   });
 
+  // Scrolls to top of page when button is clicked.
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
@@ -74,13 +75,14 @@ function createBackToTopButton() {
   });
 }
 
-window.onscroll = function () {
+// Event listeners.
+window.addEventListener('scroll', function () {
   headerBarOpacity();
   sectionVisibility();
-};
+});
 
-window.onload = function () {
+window.addEventListener('load', function () {
   headerBarOpacity();
   navToggle();
   createBackToTopButton();
-};
+});

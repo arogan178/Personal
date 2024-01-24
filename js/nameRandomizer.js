@@ -2,27 +2,36 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-document.querySelector("#Name").onmouseover = (event) => {
+const nameElement = document.querySelector("#Name");
+
+// Randomizes name when mouse is over name element.
+nameElement.addEventListener("mouseover", () => {
   let iteration = 0;
 
   clearInterval(interval);
 
+  // Randomizes name.
   interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
+    const nameValue = nameElement.dataset.value;
+    const randomizedName = nameValue
       .split("")
       .map((letter, index) => {
         if (index < iteration) {
-          return event.target.dataset.value[index];
+          return nameValue[index];
         }
 
-        return letters[Math.floor(Math.random() * 26)];
+        return letters[Math.floor(Math.random() * letters.length)];
       })
       .join("");
 
-    if (iteration >= event.target.dataset.value.length) {
+    // Updates name element with randomized name.
+    nameElement.innerText = randomizedName;
+
+    // Stops randomizing name when it's fully randomized.
+    if (iteration >= nameValue.length) {
       clearInterval(interval);
     }
 
     iteration += 1 / 3;
   }, 30);
-};
+});
