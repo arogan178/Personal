@@ -40,7 +40,7 @@ function headerBarOpacity() {
 function sectionVisibility() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.7) {
+      if (entry.intersectionRatio >= 0.65) {
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       }
@@ -85,13 +85,14 @@ window.addEventListener('load', function () {
   headerBarOpacity();
   navToggle();
   createBackToTopButton();
+  horizontalScroll();
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
+function horizontalScroll() {
   const experiences = document.querySelector(".experiences");
 
   experiences.addEventListener("wheel", (evt) => {
     evt.preventDefault();
     experiences.scrollLeft += evt.deltaY * 6;
   });
-});
+}
