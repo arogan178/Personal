@@ -22,8 +22,8 @@
   --fs-h1: 3.5rem; /* H1 font size */
   --fs-h2: 3.25rem; /* H2 font size */
   --fs-h3: 1.5rem; /* H3 font size */
-  --fs-h4: 1.125rem; /* H4 font size */
-  --fs-body: 1rem; /* Body font size */
+  --fs-h4: 1.25rem; /* H4 font size */
+  --fs-body: 1.125rem; /* Body font size */
   --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0, 0.5),
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25); /* Box shadow */
   --background-color: var(--clr-light); /* Background color */
@@ -311,6 +311,10 @@ h4 {
     position: relative;
     z-index: 2;
   }
+
+  .about-me__body {
+    grid-column: span 2;
+  }
 }
 
 /* ###################### EXPERIENCE SECTION CSS ################################# */
@@ -342,22 +346,53 @@ h4 {
 }
 
 .job {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
 }
+
+.job + .job {
+  margin-top: 1em;
+}
+
 .job-desc li {
   margin-bottom: 1em;
 }
+
 @media (min-width: 800px) {
   .experiences {
     display: flex;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
   }
 
-  .job + .job {
-    margin-left: 2em;
+  .experiences::-webkit-scrollbar {
+    scrollbar-color: var(--clr-accent);
+    height: 10px;
+  }
+
+  .experiences::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  .experiences::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent);
+    border-radius: 10px;
+  }
+
+  .job {
+    flex: auto;
+    scroll-snap-align: center;
+    padding: 2em;
+    margin: 1em;
+
+    & > * {
+      min-width: 900px;
+    }
   }
 }
 
@@ -374,7 +409,7 @@ h4 {
 
 .skill-item {
   border: 1px solid;
-  border-radius: 2px;
+  border-radius: 10px;
   display: inline-block;
   font-size: 12px;
   margin: 0 7px 7px 0;
