@@ -90,13 +90,8 @@ window.addEventListener('load', function () {
 window.addEventListener('DOMContentLoaded', (event) => {
   const experiences = document.querySelector(".experiences");
 
-  // Check if the container has 'display: flex'
-  const isFlexContainer = window.getComputedStyle(experiences).display === 'flex';
-
-  if (isFlexContainer) {
-    experiences.addEventListener("wheel", (evt) => {
-      evt.preventDefault();
-      experiences.scrollLeft += evt.deltaY * 6;
-    });
-  }
+  experiences.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    experiences.scrollLeft += evt.deltaY * 6;
+  });
 });
