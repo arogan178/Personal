@@ -3,14 +3,28 @@ const DARK_THEME = "dark";
 
 const toggle = document.getElementById("toggle-input");
 
-// Toggles theme. 
-function setTheme(theme, persist = false) {
-  const on = theme;
-  const off = theme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
+// Define color schemes.
+const COLOR_SCHEMES = {
+  [LIGHT_THEME]: {
+    "--background-color": "var(--clr-light)",
+    "--font-color": "var(--clr-dark)",
+    "--toggle-color": "var(--clr-dark)",
+  },
+  [DARK_THEME]: {
+    "--background-color": "var(--clr-dark)",
+    "--font-color": "var(--clr-light)",
+    "--toggle-color": "var(--clr-light)",
+  },
+};
 
-  const htmlEl = document.documentElement;
-  htmlEl.classList.add(on);
-  htmlEl.classList.remove(off);
+// Toggles theme.
+function setTheme(theme, persist = false) {
+  const colorScheme = COLOR_SCHEMES[theme];
+  const rootStyle = document.documentElement.style;
+
+  for (let property in colorScheme) {
+    rootStyle.setProperty(property, colorScheme[property]);
+  }
 
   if (persist) {
     localStorage.setItem("preferred-theme", theme);
@@ -19,11 +33,11 @@ function setTheme(theme, persist = false) {
 
 // Updates UI based on theme.
 function updateUI(theme) {
-  toggle.checked = theme === LIGHT_THEME;
+  toggle.checked = theme === DARK_THEME;
 }
 
 toggle.addEventListener("click", () => {
-  const theme = toggle.checked ? LIGHT_THEME : DARK_THEME;
+  const theme = toggle.checked ? DARK_THEME : LIGHT_THEME;
   setTheme(theme, true);
   updateUI(theme);
 });
