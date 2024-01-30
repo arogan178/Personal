@@ -238,7 +238,7 @@ h4 {
     text-align: right;
     position: relative;
     left: -1.5em;
-    width: calc(100% + 6em);
+    width: 100%;
   }
 }
 
