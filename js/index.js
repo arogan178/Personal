@@ -20,7 +20,7 @@ function navToggle() {
   });
 }
 
-// Manages header bar opacity based on scroll position. 
+// Manages header bar opacity based on scroll position.
 function headerBarOpacity() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -40,7 +40,7 @@ function headerBarOpacity() {
 function sectionVisibility() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.7) {
+      if (entry.intersectionRatio >= 0.65) {
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       }
@@ -49,7 +49,7 @@ function sectionVisibility() {
 
   const sections = document.querySelectorAll(".section");
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach((section) => observer.observe(section));
 }
 
 // Creates back to top button and manages its visibility.
@@ -76,13 +76,39 @@ function createBackToTopButton() {
 }
 
 // Event listeners.
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
   headerBarOpacity();
   sectionVisibility();
 });
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
   headerBarOpacity();
   navToggle();
   createBackToTopButton();
+  horizontalScroll();
 });
+
+function horizontalScroll() {
+  const experiences = document.querySelector(".experiences");
+  let isScrollingHorizontally = false;
+
+  experiences.addEventListener("wheel", (evt) => {
+    if (!isScrollingHorizontally) {
+      const scrollAmount = evt.deltaY * 10;
+      const maxScrollLeft = experiences.scrollWidth - experiences.clientWidth;
+
+      if (
+        (scrollAmount < 0 && experiences.scrollLeft > 0) ||
+        (scrollAmount > 0 && experiences.scrollLeft < maxScrollLeft)
+      ) {
+        evt.preventDefault(); // Prevent default scroll behavior only when horizontal scrolling is possible
+        experiences.scrollLeft += scrollAmount;
+        isScrollingHorizontally = true;
+
+        setTimeout(() => {
+          isScrollingHorizontally = false;
+        }, 500); // Adjust the delay as needed
+      }
+    }
+  });
+}

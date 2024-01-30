@@ -1,6 +1,6 @@
-/* 
-  Apply box-sizing to all elements, 
-  including pseudo-elements 
+/*
+  Apply box-sizing to all elements,
+  including pseudo-elements
 */
 *,
 *::before,
@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 
-/* 
-  Define global CSS variables 
+/*
+  Define global CSS variables
 */
 :root {
   --ff-primary: "Source Sans Pro", sans-serif; /* Primary font family */
@@ -19,31 +19,20 @@
   --clr-light: #fdf5df; /* Light color */
   --clr-dark: #1a1a1a; /* Dark color */
   --clr-accent: #ad0e0e; /* Accent color */
-  --fs-h1: 3.5rem; /* H1 font size */
-  --fs-h2: 3.25rem; /* H2 font size */
-  --fs-h3: 1.5rem; /* H3 font size */
-  --fs-h4: 1.125rem; /* H4 font size */
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
   --fs-body: 1rem; /* Body font size */
   --bs: 0.25em 0.25em 0.75em rgb(0, 0, 0, 0.5),
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.25); /* Box shadow */
-  --background-color: var(--clr-light); /* Background color */
-  --font-color: var(--clr-dark); /* Font color */
-  --toggle-color: var(--clr-dark); /* Toggle color */
+  --background-color: var(--clr-dark); /* Background color */
+  --font-color: var(--clr-light); /* Font color */
+  --toggle-color: var(--clr-light); /* Toggle color */
 }
 
-/* 
-  Define CSS variables for dark mode 
-*/
-:root.dark {
-  --background-color: var(--clr-dark);
-  --toggle-color: var(--clr-light);
-  --font-color: var(--clr-light);
-}
-
-/* 
-  Media query for screens wider than 900px 
-*/
-@media (min-width: 900px) {
+/*   Media query for screens wider than 900px */
+@media (min-width: 650px) {
   :root {
     --fs-h1: 4.5rem;
     --fs-h2: 3.5rem;
@@ -53,9 +42,18 @@
   }
 }
 
-/* 
-  Media query for screens narrower than 650px 
-*/
+/*   Media query for screens narrower than 350px */
+@media (max-width: 350px) {
+  :root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.25rem;
+    --fs-h4: 1rem;
+    --fs-body: 0.75rem;
+  }
+}
+
+/*   Media query dark theme preference */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: var(--clr-dark);
@@ -68,19 +66,6 @@
   }
 }
 
-/* 
-  Media query for screens narrower than 350px 
-*/
-@media (max-width: 350px) {
-  :root {
-    --fs-h1: 2rem;
-    --fs-h2: 1.5rem;
-    --fs-h3: 1rem;
-    --fs-h4: 1.125rem;
-    --fs-body: 0.75rem;
-  }
-}
-
 /* ###################### GENERAL STYLES CSS ################################# */
 
 html {
@@ -88,15 +73,18 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 0em;
+  scrollbar-color: transparent;
+  width: 0;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-color);
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-accent);
+  background-color: var(--clr-accent);
+  border-radius: 10px;
 }
 
 body {
@@ -115,7 +103,7 @@ body {
 
 section {
   padding: 1.5em 2em;
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
 }
 
 img {
@@ -210,8 +198,9 @@ h4 {
 /* ###################### INTRO SECTION CSS ################################# */
 
 .intro {
-  padding-top: 15%;
-  padding-bottom: 17%;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  margin-inline: auto;
 }
 
 .intro__img {
@@ -227,8 +216,9 @@ h4 {
 @media (min-width: 650px) {
   .intro {
     display: grid;
-    width: min-content;
-    margin: 0 auto;
+    max-width: 1000px;
+    padding-top: 35vh;
+    padding-bottom: 1vh;
     grid-column-gap: 1em;
     grid-template-areas: "img title" "img subtitle";
     grid-template-columns: min-content max-content;
@@ -248,7 +238,7 @@ h4 {
     text-align: right;
     position: relative;
     left: -1.5em;
-    width: calc(100% + 1.5em);
+    width: calc(100% + 1em);
   }
 }
 
@@ -271,7 +261,7 @@ h4 {
 /* ###################### ABOUT ME SECTION CSS ################################# */
 
 .about-me {
-  margin: 0 auto;
+  margin-inline: auto;
   padding-top: 10em;
   text-align: justify;
   text-justify: inter-word;
@@ -311,14 +301,16 @@ h4 {
     position: relative;
     z-index: 2;
   }
+
+  .about-me__body {
+    grid-column: span 2;
+  }
 }
 
 /* ###################### EXPERIENCE SECTION CSS ################################# */
 
 .my-experience {
   margin-top: 2em;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .section__title--experience {
@@ -333,8 +325,10 @@ h4 {
   width: 20vh;
   height: 1px;
   margin: 0.5em auto 0.5em;
-  background: var(--clr-light);
+  background: var(--background-color);
+  filter: invert(1);
   opacity: 0.25;
+  transition: background-color 700ms ease-in-out;
 }
 
 .experiences {
@@ -342,42 +336,62 @@ h4 {
 }
 
 .job {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin-inline: auto;
 }
+
+.job + .job {
+  margin-top: 1em;
+}
+
 .job-desc li {
   margin-bottom: 1em;
 }
-@media (min-width: 800px) {
+
+@media (min-width: 650px) {
   .experiences {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100%, 1fr));
+    gap: 10rem;
     max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    align-items: center;
   }
 
-  .job + .job {
-    margin-left: 2em;
+  .job {
+    padding: 20px;
+    margin: 1em;
+    scroll-snap-align: center;
+  }
+
+  .job-desc > * {
+    word-wrap: break-word;
+    word-break: break-word;
   }
 }
 
 /* ###################### SKILLS SECTION CSS ################################# */
 
 .my-skills {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  text-align: left;
+  margin-inline: auto;
+  text-align: justify;
   padding: 15px;
   margin-top: 30px;
 }
 
+.skill-list {
+  padding-inline-start: 0;
+}
+
 .skill-item {
   border: 1px solid;
-  border-radius: 2px;
+  border-radius: 10px;
   display: inline-block;
-  font-size: 12px;
-  margin: 0 7px 7px 0;
+  margin: 0px 10px 10px 0px;
   font-size: var(--fs-h4);
   padding: 0.5em;
   box-shadow: var(--bs);
@@ -386,19 +400,31 @@ h4 {
 
 .skill-item:hover {
   box-shadow: none;
-
   transition: box-shadow 250ms ease-in-out;
 }
 
 @media (min-width: 650px) {
   .my-skills {
     max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
   }
+}
 
-  .skill-item {
-    margin-left: 0.5em;
-    display: inline-block;
+/* ###################### SCROLL PROGRESS CSS ################################# */
+
+.scroll-progress {
+  position: sticky;
+  bottom: 0;
+  width: 0%;
+  height: 5px;
+  background: var(--clr-accent);
+  border-radius: 10px;
+  z-index: 1000;
+  animation: scroll-progress linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-progress {
+  to {
+    width: 100%;
   }
 }
