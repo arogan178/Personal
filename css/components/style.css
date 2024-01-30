@@ -218,7 +218,7 @@ h4 {
     display: grid;
     max-width: 1000px;
     padding-top: 35vh;
-    padding-bottom: 35vh;
+    padding-bottom: 10vh;
     grid-column-gap: 1em;
     grid-template-areas: "img title" "img subtitle";
     grid-template-columns: min-content max-content;
