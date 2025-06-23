@@ -77,30 +77,6 @@
     sections.forEach((section) => observer.observe(section));
   }
 
-  // Creates back to top button and manages its visibility.
-  function createBackToTopButton() {
-    const backToTopBtn = document.querySelector("#back-to-top");
-    if (!backToTopBtn) return;
-
-    const throttledScrollHandler = throttle(() => {
-      const shouldShow = window.scrollY > 400;
-      backToTopBtn.classList.toggle("btn-show", shouldShow);
-      backToTopBtn.classList.toggle("btn-hide", !shouldShow);
-    }, 100);
-
-    window.addEventListener("scroll", throttledScrollHandler, {
-      passive: true,
-    });
-
-    // Scrolls to top of page when button is clicked.
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-  }
-
   // Enhanced horizontal scroll with better performance
   function horizontalScroll() {
     const experiences = document.querySelector(".experiences");
@@ -139,7 +115,6 @@
     try {
       headerBarOpacity();
       navToggle();
-      createBackToTopButton();
       sectionVisibility();
       horizontalScroll();
     } catch (error) {
