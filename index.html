@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/components/style.css" />
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;900&family=Source+Sans+Pro:wght@300;900&display=swap"
       rel="stylesheet"
@@ -107,13 +108,18 @@
         </div>
 
         <div class="nav__button">
-          <button class="nav-toggle" aria-label="toggle navigation">
+          <button
+            class="nav-toggle"
+            aria-label="toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
             <div class="hamburger__icon">
               <span class="hamburger"></span>
             </div>
           </button>
         </div>
-        <nav class="nav" aria-label="Main navigation">
+        <nav class="nav" aria-label="Main navigation" id="primary-navigation">
           <ul class="nav__list">
             <li class="nav__item">
               <a href="#home" class="nav__link" aria-current="page">Home 🏠</a>
@@ -321,7 +327,8 @@
             target="_blank"
             rel="noopener"
           >
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
           </a>
         </li>
         <li class="social-list__item">
@@ -331,7 +338,8 @@
             target="_blank"
             rel="noopener"
           >
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span class="sr-only">Github</span>
           </a>
         </li>
       </ul>

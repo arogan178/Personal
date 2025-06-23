@@ -23,13 +23,14 @@
 
     if (!navToggle) return;
 
+    // Toggle navigation menu
     navToggle.addEventListener("click", () => {
       document.body.classList.toggle("nav-open");
       const isOpen = document.body.classList.contains("nav-open");
       document.body.style.overflow = isOpen ? "hidden" : "auto";
 
-      // Update ARIA label for accessibility
-      navToggle.setAttribute("aria-expanded", isOpen);
+      const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", !isExpanded);
     });
 
     navLinks.forEach((link) => {
