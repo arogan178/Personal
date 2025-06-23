@@ -53,6 +53,14 @@
   }
 }
 
+/*   Media query for high DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
 /*   Media query dark theme preference */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -63,6 +71,18 @@
   :root.light {
     --background-color: var(--clr-light);
     --font-color: var(--clr-dark);
+  }
+}
+
+/*   Media query for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -103,12 +123,12 @@ body {
 
 section {
   padding: 1.5em 2em;
-  /* backdrop-filter: blur(15px); */
 }
 
 img {
   display: block;
   max-width: 90%;
+  height: auto;
 }
 
 strong {
@@ -117,13 +137,13 @@ strong {
 
 /* ###################### TYPOGRAPHY CSS ################################# */
 
-strong#Name {
-  font-family: Source Code Pro, monospace;
+.name-element {
+  font-family: var(--ff-secondary);
   position: relative;
   padding-bottom: 0.2em;
 }
 
-strong#Name::after {
+.name-element::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -138,7 +158,7 @@ strong#Name::after {
   z-index: -1;
 }
 
-strong#Name:hover::after {
+.name-element:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

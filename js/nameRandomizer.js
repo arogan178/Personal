@@ -4,8 +4,8 @@ let interval = null;
 
 const nameElement = document.querySelector("#Name");
 
-// Randomizes name when mouse is over name element.
-nameElement.addEventListener("mouseover", () => {
+// Randomizes name when mouse is over name element or touched on mobile.
+function randomizeName() {
   let iteration = 0;
 
   clearInterval(interval);
@@ -34,4 +34,14 @@ nameElement.addEventListener("mouseover", () => {
 
     iteration += 1 / 3;
   }, 30);
-});
+}
+
+if (nameElement) {
+  nameElement.addEventListener("mouseover", randomizeName);
+
+  // Add touch support for mobile devices
+  nameElement.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Prevent double-tap zoom
+    randomizeName();
+  });
+}
