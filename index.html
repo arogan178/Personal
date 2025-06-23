@@ -87,205 +87,211 @@
       });
     </script>
   </head>
-  <header>
-    <div class="header__bar">
-      <div class="theme__selector">
-        <div class="logo__toggle-container">
-          <div class="theme__logo">
-            <i class="fas fa-adjust"></i>
-          </div>
-
-          <label class="toggle-switch" for="toggle-input">
-            <input id="toggle-input" type="checkbox" />
-            <div class="toggle-switch__control"></div>
-          </label>
-        </div>
-      </div>
-
-      <div class="nav__button">
-        <button class="nav-toggle" aria-label="toggle navigation">
-          <div class="hamburger__icon">
-            <span class="hamburger"></span>
-          </div>
-        </button>
-      </div>
-      <nav class="nav" aria-label="Main navigation">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#home" class="nav__link">Home 🏠</a>
-          </li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About Me 💭</a>
-          </li>
-          <li class="nav__item">
-            <a href="#experience" class="nav__link">Experience 🥼</a>
-          </li>
-          <li class="nav__item">
-            <a href="#skills" class="nav__link">Skills 💻</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact Me ✉️</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <body>
+    <header>
+      <div class="header__bar">
+        <div class="theme__selector">
+          <div class="logo__toggle-container">
+            <div class="theme__logo">
+              <i class="fas fa-adjust"></i>
+            </div>
+
+            <label class="toggle-switch" for="toggle-input">
+              <input id="toggle-input" type="checkbox" />
+              <div class="toggle-switch__control"></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="nav__button">
+          <button class="nav-toggle" aria-label="toggle navigation">
+            <div class="hamburger__icon">
+              <span class="hamburger"></span>
+            </div>
+          </button>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link" aria-current="page">Home 🏠</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Me 💭</a>
+            </li>
+            <li class="nav__item">
+              <a href="#experience" class="nav__link">Experience 🥼</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Skills 💻</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact Me ✉️</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <button id="back-to-top" class="btn-hide">
       <i class="fas fa-chevron-up"></i>
     </button>
-    <!-- Introduction -->
-    <section class="intro" id="home">
-      <h1 class="section__title section__title--intro">
-        Hi, I'm
-        <strong id="Name" class="name-element" data-value="Andrea Bugeja"
-          >Andrea Bugeja</strong
-        >
-      </h1>
-      <p class="section__subtitle section__subtitle--intro">Welcome!</p>
-      <img
-        src="img/andrea_casual.jpg"
-        alt="Andrea sitting on a wall looking philosophical"
-        class="intro__img"
-      />
-    </section>
+    <main>
+      <!-- Introduction -->
+      <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+          Hi, I'm
+          <strong id="Name" class="name-element" data-value="Andrea Bugeja"
+            >Andrea Bugeja</strong
+          >
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Welcome!</p>
+        <img
+          src="img/andrea_casual.jpg"
+          alt="Andrea sitting on a wall looking philosophical"
+          class="intro__img"
+          loading="lazy"
+        />
+      </section>
 
-    <!-- About Me -->
-    <section class="about-me section" id="about">
-      <h2 class="section__title section__title--about">Who am I ?</h2>
-      <p class="section__subtitle section__subtitle--about">
-        DevOps/Sprinter/Gamer
-      </p>
-
-      <div class="about-me__body">
-        <p>Hi there!👋🏽</p>
-
-        <p>
-          I'm <strong id="Name">Andrea</strong>, an AI Masters Graduate with a
-          side of Game Design & Development Degree 🚀
+      <!-- About Me -->
+      <section class="about-me section" id="about">
+        <h2 class="section__title section__title--about">Who am I ?</h2>
+        <p class="section__subtitle section__subtitle--about">
+          DevOps/Sprinter/Gamer
         </p>
 
-        <p>
-          Beyond contributing to the academic field, I am a dedicated athlete
-          who has earned national recognition 🏅
-        </p>
+        <div class="about-me__body">
+          <p>Hi there!👋🏽</p>
 
-        <p>
-          In the rare instances when I'm not circling the track, you'll find me
-          gaming away, competing in online tournaments, and staying in the loop
-          with industry trends 🏃🎮
-        </p>
+          <p>
+            I'm <strong>Andrea</strong>, an AI Masters Graduate with a side of
+            Game Design & Development Degree 🚀
+          </p>
 
-        <p>
-          Let's connect the dots between tech, games, and a touch of
-          athleticism! 🌐✨
-        </p>
-      </div>
+          <p>
+            Beyond contributing to the academic field, I am a dedicated athlete
+            who has earned national recognition 🏅
+          </p>
 
-      <img
-        src="img/andrea_corporate.jpg"
-        alt="A picture of Andrea in a corporate setting"
-        class="about-me__img"
-      />
-    </section>
+          <p>
+            In the rare instances when I'm not circling the track, you'll find
+            me gaming away, competing in online tournaments, and staying in the
+            loop with industry trends 🏃🎮
+          </p>
 
-    <!-- Experience -->
-    <section class="my-experience section" id="experience">
-      <h2 class="section__title section__title--experience">Experience</h2>
-      <div class="experiences">
-        <!-- Experience 1 -->
-        <div class="job">
-          <h3>DevOps Engineer</h3>
-          <h4>07/2023 – Present</h4>
-          <ul class="job-desc">
-            <li>
-              Optimise data platform services’ health, performance, and capacity
-              for peak functionality using tools such as Ansible, Kubernetes and
-              Helm
-            </li>
-            <li>
-              Monitor and administer the core gaming platform, surpassing SLAs
-              through big data technologies.
-            </li>
-            <li>
-              Design and implement CI/CD pipelines to streamline the deployment
-              process and improve software delivery efficiency.
-            </li>
-          </ul>
+          <p>
+            Let's connect the dots between tech, games, and a touch of
+            athleticism! 🌐✨
+          </p>
         </div>
-        <!-- Experience 2 -->
-        <div class="job">
-          <h3>Sr. DevOps Analyst</h3>
-          <h4>07/2022 – 06/2023</h4>
-          <ul class="job-desc">
-            <li>
-              Developed and maintained automated testing suites for online
-              banking and other systems to ensure high-quality delivery
-            </li>
-            <li>
-              Design and implemented CI/CD pipelines to streamline the
-              deployment process and improve software delivery efficiency.
-            </li>
-            <li>
-              Identified and troubleshooted technical issues across various
-              systems providing timely resolution and implementing preventive
-              measures to ensure smooth operation.
-            </li>
-          </ul>
-        </div>
-        <!-- Experience 3 -->
-        <div class="job">
-          <h3>DevOps Analyst</h3>
-          <h4>03/2019 – 07/2022</h4>
-          <ul class="job-desc">
-            <li>
-              Served as the primary point of contact for the internet banking
-              system, providing support, documentation, and deployment of
-              enhancements
-            </li>
-            <li>
-              Documented and supported all systems and processes, enabling
-              efficient resolution of any issues.
-            </li>
-            <li>
-              Diagnosed technical issues in networks and systems, delivering
-              effective solutions and preventive measures for optimal
-              performance.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- Skills -->
-    <section class="my-skills section" id="skills">
-      <h2 class="section__title section__title--skills">Skills</h2>
-      <p class="section__subtitle section__subtitle--skills">What can I do?</p>
-      <ul class="skill-list">
-        <li class="skill-item">Ansible</li>
-        <li class="skill-item">C#</li>
-        <li class="skill-item">Docker</li>
-        <li class="skill-item">Flask</li>
-        <li class="skill-item">Git</li>
-        <li class="skill-item">Grafana</li>
-        <li class="skill-item">HTML/CSS</li>
-        <li class="skill-item">Helm</li>
-        <li class="skill-item">Java</li>
-        <li class="skill-item">JavaScript</li>
-        <li class="skill-item">Kafka</li>
-        <li class="skill-item">Kubernetes</li>
-        <li class="skill-item">Kustomize</li>
-        <li class="skill-item">OpenShift</li>
-        <li class="skill-item">PromQL</li>
-        <li class="skill-item">Python</li>
-        <li class="skill-item">Redis</li>
-        <li class="skill-item">Rest API</li>
-        <li class="skill-item">SQL</li>
-        <li class="skill-item">Unity</li>
-        <li class="skill-item">VB .NET</li>
-      </ul>
-    </section>
+        <img
+          src="img/andrea_corporate.jpg"
+          alt="A picture of Andrea in a corporate setting"
+          class="about-me__img"
+          loading="lazy"
+        />
+      </section>
+
+      <!-- Experience -->
+      <section class="my-experience section" id="experience">
+        <h2 class="section__title section__title--experience">Experience</h2>
+        <div class="experiences">
+          <!-- Experience 1 -->
+          <div class="job">
+            <h3>DevOps Engineer</h3>
+            <h4>07/2023 – Present</h4>
+            <ul class="job-desc">
+              <li>
+                Optimise data platform services’ health, performance, and
+                capacity for peak functionality using tools such as Ansible,
+                Kubernetes and Helm
+              </li>
+              <li>
+                Monitor and administer the core gaming platform, surpassing SLAs
+                through big data technologies.
+              </li>
+              <li>
+                Design and implement CI/CD pipelines to streamline the
+                deployment process and improve software delivery efficiency.
+              </li>
+            </ul>
+          </div>
+          <!-- Experience 2 -->
+          <div class="job">
+            <h3>Sr. DevOps Analyst</h3>
+            <h4>07/2022 – 06/2023</h4>
+            <ul class="job-desc">
+              <li>
+                Developed and maintained automated testing suites for online
+                banking and other systems to ensure high-quality delivery
+              </li>
+              <li>
+                Design and implemented CI/CD pipelines to streamline the
+                deployment process and improve software delivery efficiency.
+              </li>
+              <li>
+                Identified and troubleshooted technical issues across various
+                systems providing timely resolution and implementing preventive
+                measures to ensure smooth operation.
+              </li>
+            </ul>
+          </div>
+          <!-- Experience 3 -->
+          <div class="job">
+            <h3>DevOps Analyst</h3>
+            <h4>03/2019 – 07/2022</h4>
+            <ul class="job-desc">
+              <li>
+                Served as the primary point of contact for the internet banking
+                system, providing support, documentation, and deployment of
+                enhancements
+              </li>
+              <li>
+                Documented and supported all systems and processes, enabling
+                efficient resolution of any issues.
+              </li>
+              <li>
+                Diagnosed technical issues in networks and systems, delivering
+                effective solutions and preventive measures for optimal
+                performance.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="my-skills section" id="skills">
+        <h2 class="section__title section__title--skills">Skills</h2>
+        <p class="section__subtitle section__subtitle--skills">
+          What can I do?
+        </p>
+        <ul class="skill-list">
+          <li class="skill-item">Ansible</li>
+          <li class="skill-item">C#</li>
+          <li class="skill-item">Docker</li>
+          <li class="skill-item">Flask</li>
+          <li class="skill-item">Git</li>
+          <li class="skill-item">Grafana</li>
+          <li class="skill-item">HTML/CSS</li>
+          <li class="skill-item">Helm</li>
+          <li class="skill-item">Java</li>
+          <li class="skill-item">JavaScript</li>
+          <li class="skill-item">Kafka</li>
+          <li class="skill-item">Kubernetes</li>
+          <li class="skill-item">Kustomize</li>
+          <li class="skill-item">OpenShift</li>
+          <li class="skill-item">PromQL</li>
+          <li class="skill-item">Python</li>
+          <li class="skill-item">Redis</li>
+          <li class="skill-item">Rest API</li>
+          <li class="skill-item">SQL</li>
+          <li class="skill-item">Unity</li>
+          <li class="skill-item">VB .NET</li>
+        </ul>
+      </section>
+    </main>
     <!-- Footer-->
     <footer class="footer section" id="contact">
       <div class="footer__links">
@@ -310,6 +316,7 @@
             class="social-list__link"
             href="https://www.linkedin.com/in/andrea-bugeja/"
             target="_blank"
+            rel="noopener"
           >
             <i class="fab fa-linkedin"></i>
           </a>
@@ -319,6 +326,7 @@
             class="social-list__link"
             href="https://github.com/arogan178"
             target="_blank"
+            rel="noopener"
           >
             <i class="fab fa-github"></i>
           </a>
@@ -333,8 +341,8 @@
       crossorigin="anonymous"
       async
     ></script>
-    <script src="js/index.js"></script>
-    <script src="js/toggle.js"></script>
-    <script src="js/nameRandomizer.js"></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/toggle.js" defer></script>
+    <script src="js/nameRandomizer.js" defer></script>
   </body>
 </html>
