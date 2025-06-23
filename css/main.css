@@ -1,4 +1,6 @@
+/* 
+Imports are no longer used in this file, as the CSS is now linked directly in the HTML.
 @import "components/style.css";
 @import "components/footer.css";
 @import "components/header.css";
-@import "components/button.css";
+@import "components/button.css"; */
