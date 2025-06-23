@@ -46,16 +46,13 @@
     const header = document.querySelector(".header__bar");
     if (!header) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (window.scrollY > 450) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+    const handleScroll = throttle(() => {
+      if (window.scrollY > 450 && !header.classList.contains("is-visible")) {
+        header.classList.add("is-visible");
+      }
+    }, 100);
 
-    observer.observe(header);
+    window.addEventListener("scroll", handleScroll, { passive: true });
   }
 
   // Manages visibility of sections based on viewport intersection.
