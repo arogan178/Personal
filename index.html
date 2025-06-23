@@ -13,6 +13,32 @@
       content="Andrea Bugeja, DevOps Engineer, Portfolio, Resume, AI, Game Development"
     />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andreabugeja.me/" />
+    <meta property="og:title" content="The Andrea Experience" />
+    <meta
+      property="og:description"
+      content="The personal portfolio of Andrea Bugeja, a DevOps Engineer specializing in AI and Game Development."
+    />
+    <meta
+      property="og:image"
+      content="https://andreabugeja.me/img/andrea_social_preview.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://andreabugeja.me/" />
+    <meta property="twitter:title" content="The Andrea Experience" />
+    <meta
+      property="twitter:description"
+      content="The personal portfolio of Andrea Bugeja, a DevOps Engineer specializing in AI and Game Development."
+    />
+    <meta
+      property="twitter:image"
+      content="https://andreabugeja.me/img/andrea_social_preview.jpg"
+    />
+
     <title>The Andrea Experience</title>
 
     <!-- Preconnect to external domains for better performance -->
@@ -32,6 +58,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="img/favicon.png" type="image/png" />
 
     <!-- Analytics and tracking scripts -->
     <script>
@@ -97,7 +124,7 @@
         <div class="theme__selector">
           <div class="logo__toggle-container">
             <div class="theme__logo">
-              <i class="fas fa-adjust"></i>
+              <i class="fas fa-adjust" aria-hidden="true"></i>
             </div>
 
             <label class="toggle-switch" for="toggle-input">
@@ -122,27 +149,37 @@
         <nav class="nav" aria-label="Main navigation" id="primary-navigation">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link" aria-current="page">Home 🏠</a>
+              <a href="#home" class="nav__link"
+                >Home <span aria-hidden="true">🏠</span></a
+              >
             </li>
             <li class="nav__item">
-              <a href="#about" class="nav__link">About Me 💭</a>
+              <a href="#about" class="nav__link"
+                >About Me <span aria-hidden="true">💭</span></a
+              >
             </li>
             <li class="nav__item">
-              <a href="#experience" class="nav__link">Experience 🥼</a>
+              <a href="#experience" class="nav__link"
+                >Experience <span aria-hidden="true">🥼</span></a
+              >
             </li>
             <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills 💻</a>
+              <a href="#skills" class="nav__link"
+                >Skills <span aria-hidden="true">💻</span></a
+              >
             </li>
             <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact Me ✉️</a>
+              <a href="#contact" class="nav__link"
+                >Contact Me <span aria-hidden="true">✉️</span></a
+              >
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <button id="back-to-top" class="btn-hide">
-      <i class="fas fa-chevron-up"></i>
+    <button id="back-to-top" class="btn-hide" aria-label="Back to top">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
     <main>
       <!-- Introduction -->
