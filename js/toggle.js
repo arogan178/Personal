@@ -1,5 +1,7 @@
 const LIGHT_THEME = "light";
 const DARK_THEME = "dark";
+const PREFERRED_THEME_KEY = "preferred-theme";
+const DARK_SCHEME_QUERY = "(prefers-color-scheme: dark)";
 
 const toggle = document.getElementById("toggle-input");
 
@@ -27,7 +29,7 @@ function setTheme(theme, persist = false) {
   }
 
   if (persist) {
-    localStorage.setItem("preferred-theme", theme);
+    localStorage.setItem(PREFERRED_THEME_KEY, theme);
   }
 }
 
@@ -44,11 +46,11 @@ function handleThemeToggle() {
 
 // Initializes the theme based on user preference or saved theme.
 function initializeTheme() {
-  const osPreference = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const osPreference = window.matchMedia(DARK_SCHEME_QUERY).matches
     ? DARK_THEME
     : LIGHT_THEME;
   const preferredTheme =
-    localStorage.getItem("preferred-theme") || osPreference;
+    localStorage.getItem(PREFERRED_THEME_KEY) || osPreference;
   setTheme(preferredTheme, false);
   updateUI(preferredTheme);
 }
