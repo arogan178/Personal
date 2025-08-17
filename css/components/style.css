@@ -487,23 +487,14 @@ h4 {
   margin-bottom: 0.5rem; /* reduce to match other sections */
 }
 
-.project__links {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.project__links a {
-  padding: 0.45rem 0.8rem;
-}
-
 .project-item:hover {
   box-shadow: none;
   transition: box-shadow 250ms ease-in-out;
 }
 
 /* Also trigger the hover/focus styles when interacting with the inner link so the visual feedback feels immediate */
-.project__link:hover,
-.project__link:focus {
+.project-item__link:hover,
+.project-item__link:focus {
   box-shadow: none;
   transition: box-shadow 250ms ease-in-out;
 }
@@ -517,16 +508,23 @@ h4 {
   margin-top: 30px;
 }
 
+/* Consolidated skill-list and skill-item styles (removed duplicate definitions) */
 .skill-list {
+  /* reset list padding and use flex layout for wrapping */
   padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  margin: 0;
+  align-items: center;
 }
 
 .skill-item {
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   display: inline-block;
-  margin: 0px 10px 10px 0px;
-  padding: 0.45em 0.75em; /* increased padding */
+  margin: 0;
+  padding: 0.38em 0.65em;
   box-shadow: var(--bs);
   transition: box-shadow 400ms ease-in-out;
 }
@@ -554,21 +552,7 @@ h4 {
   margin: 0;
 }
 
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.6rem;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-}
-
-.skill-item {
-  margin: 0;
-  padding: 0.38em 0.65em;
-  border-radius: 0.6rem;
-}
-
+/* (Previous detailed .skill-list and .skill-item merged above) */
 @media (min-width: 900px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
