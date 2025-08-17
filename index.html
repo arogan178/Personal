@@ -40,9 +40,11 @@
     />
 
     <title>The Andrea Experience</title>
+    <link rel="canonical" href="https://andreabugeja.me/" />
 
     <!-- Preconnect to external domains for better performance -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
 
     <!-- Stylesheets -->
@@ -51,9 +53,11 @@
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/footer.css" />
     <link rel="stylesheet" href="css/components/button.css" />
+    <!-- Inter + JetBrains Mono -->
+    <!-- Preload Google Fonts stylesheet for Inter + JetBrains Mono, then apply stylesheet on load -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;900&family=Source+Sans+Pro:wght@300;900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap"
     />
 
     <!-- Favicon -->
@@ -161,6 +165,11 @@
             <li class="nav__item">
               <a href="#experience" class="nav__link"
                 >Experience <span aria-hidden="true">🥼</span></a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link"
+                >Projects <span aria-hidden="true">🚧</span></a
               >
             </li>
             <li class="nav__item">
@@ -307,35 +316,108 @@
         </div>
       </section>
 
+      <!-- Projects -->
+      <section class="my-projects section" id="projects">
+        <h2 class="section__title section__title--projects">Projects</h2>
+        <p class="section__subtitle section__subtitle--projects">
+          What did I create?
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-item">
+            <a
+              class="project-item__link"
+              href="https://macrotrackr.com"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="project-item__head">
+                <img
+                  src="img/macrotrackr_icon.png"
+                  alt="MacroTrackr logo"
+                  class="project__logo"
+                  width="56"
+                  height="56"
+                />
+                <h3 class="project-item__title">MacroTrackr</h3>
+              </div>
+              <p class="project-item__subtitle">
+                A macro and nutrition tracking web app. Built with React,
+                TypeScript, Vite, TailwindCSS, Bun &amp; Elysia.
+              </p>
+            </a>
+          </article>
+        </div>
+      </section>
       <!-- Skills -->
       <section class="my-skills section" id="skills">
         <h2 class="section__title section__title--skills">Skills</h2>
         <p class="section__subtitle section__subtitle--skills">
           What can I do?
         </p>
-        <ul class="skill-list">
-          <li class="skill-item">Ansible</li>
-          <li class="skill-item">C#</li>
-          <li class="skill-item">Docker</li>
-          <li class="skill-item">Flask</li>
-          <li class="skill-item">Git</li>
-          <li class="skill-item">Grafana</li>
-          <li class="skill-item">HTML/CSS</li>
-          <li class="skill-item">Helm</li>
-          <li class="skill-item">Java</li>
-          <li class="skill-item">JavaScript</li>
-          <li class="skill-item">Kafka</li>
-          <li class="skill-item">Kubernetes</li>
-          <li class="skill-item">Kustomize</li>
-          <li class="skill-item">OpenShift</li>
-          <li class="skill-item">PromQL</li>
-          <li class="skill-item">Python</li>
-          <li class="skill-item">Redis</li>
-          <li class="skill-item">Rest API</li>
-          <li class="skill-item">SQL</li>
-          <li class="skill-item">Unity</li>
-          <li class="skill-item">VB .NET</li>
-        </ul>
+        <div class="skills-grid">
+          <section class="skill-group">
+            <h3 class="skill-group__title">DevOps &amp; Infrastructure</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Ansible</li>
+              <li class="skill-item">AWS</li>
+              <li class="skill-item">Docker</li>
+              <li class="skill-item">Kubernetes</li>
+              <li class="skill-item">Helm</li>
+              <li class="skill-item">Kustomize</li>
+              <li class="skill-item">OpenShift</li>
+              <li class="skill-item">Grafana</li>
+              <li class="skill-item">Graylog</li>
+              <li class="skill-item">Prometheus</li>
+              <li class="skill-item">PM2</li>
+              <li class="skill-item">Git</li>
+            </ul>
+          </section>
+
+          <section class="skill-group">
+            <h3 class="skill-group__title">Frontend (UI / Web)</h3>
+            <ul class="skill-list">
+              <li class="skill-item">HTML/CSS</li>
+              <li class="skill-item">JavaScript</li>
+              <li class="skill-item">TypeScript</li>
+              <li class="skill-item">React</li>
+              <li class="skill-item">Vite</li>
+              <li class="skill-item">TailwindCSS</li>
+              <li class="skill-item">Framer Motion</li>
+              <li class="skill-item">TanStack Router</li>
+              <li class="skill-item">TanStack Query</li>
+              <li class="skill-item">TanStack Table</li>
+              <li class="skill-item">Zustand</li>
+            </ul>
+          </section>
+
+          <section class="skill-group">
+            <h3 class="skill-group__title">Backend &amp; APIs</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Flask</li>
+              <li class="skill-item">Elysia.js</li>
+              <li class="skill-item">Bun</li>
+              <li class="skill-item">Rest API</li>
+              <li class="skill-item">Swagger / OpenAPI</li>
+              <li class="skill-item">Stripe</li>
+              <li class="skill-item">SQLite</li>
+            </ul>
+          </section>
+
+          <section class="skill-group">
+            <h3 class="skill-group__title">Languages &amp; Data</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Python</li>
+              <li class="skill-item">Java</li>
+              <li class="skill-item">C#</li>
+              <li class="skill-item">VB .NET</li>
+              <li class="skill-item">SQL</li>
+              <li class="skill-item">Redis</li>
+              <li class="skill-item">Kafka</li>
+              <li class="skill-item">Unity</li>
+            </ul>
+          </section>
+        </div>
       </section>
     </main>
     <!-- Footer-->

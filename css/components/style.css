@@ -12,10 +12,14 @@
   Define global CSS variables
 */
 :root {
-  --ff-primary: "Source Sans Pro", sans-serif; /* Primary font family */
-  --ff-secondary: "Source Code Pro", monospace; /* Secondary font family */
+  --ff-primary: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif; /* Primary font family */
+  --ff-secondary: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    "Roboto Mono", monospace; /* Secondary font family */
   --fw-reg: 300; /* Regular font weight */
   --fw-bold: 900; /* Bold font weight */
+  --body-weight: 400;
+  --heading-weight: 800;
   --clr-light: #f8f8f8; /* Light color */
   --clr-dark: #1a1a1a; /* Dark color */
   --clr-accent: #ad0e0e; /* Accent color */
@@ -113,6 +117,7 @@ body {
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
+  font-weight: var(--body-weight);
   line-height: 1.5;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -186,14 +191,17 @@ h4 {
 
 h1 {
   font-size: var(--fs-h1);
+  font-weight: var(--heading-weight);
 }
 
 h2 {
   font-size: var(--fs-h2);
+  font-weight: var(--heading-weight);
 }
 
 h3 {
   font-size: var(--fs-h3);
+  font-weight: var(--heading-weight);
 }
 
 h4 {
@@ -220,11 +228,11 @@ h4 {
 
 .section__subtitle--intro,
 .section__subtitle--about,
-.section__subtitle--skills {
+.section__subtitle--skills,
+.section__subtitle--projects {
   background: var(--clr-accent);
   padding: 0.25em 1em;
   font-family: var(--ff-secondary);
-  margin-bottom: 1em;
   color: var(--clr-light);
 }
 
@@ -277,6 +285,7 @@ h4 {
 
 .about-me,
 .my-experience,
+.my-projects,
 .my-skills {
   opacity: 0;
   visibility: hidden;
@@ -285,6 +294,7 @@ h4 {
 
 .about-me.is-visible,
 .my-experience.is-visible,
+.my-projects.is-visible,
 .my-skills.is-visible {
   opacity: 1;
   visibility: visible;
@@ -407,6 +417,88 @@ h4 {
   }
 }
 
+/* ###################### PROJECTS SECTION CSS ################################# */
+.my-projects {
+  margin-inline: auto;
+  text-align: justify;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-item {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid;
+  border-radius: 0.9rem;
+  box-shadow: var(--bs);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.project-item__title {
+  margin: 0 0 0.5rem 0;
+}
+
+.project-item__head {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.project__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.project-item__subtitle {
+  margin: 0 0 1rem 0;
+  color: var(--font-color);
+  opacity: 0.9;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.project-item__link {
+  display: block; /* fill the article */
+  color: inherit;
+  text-decoration: none;
+  padding: 1.2rem; /* provide the visual padding inside the card and make the full area clickable */
+  border-radius: 0.9rem; /* match article radius */
+  width: 100%;
+}
+
+.project-item__link:focus-visible {
+  outline-offset: 4px;
+  border-radius: 0.7rem;
+}
+
+/* Space between projects subtitle and grid */
+.section__subtitle--projects {
+  margin-bottom: 0.5rem; /* reduce to match other sections */
+}
+
+.project-item:hover {
+  box-shadow: none;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+/* Also trigger the hover/focus styles when interacting with the inner link so the visual feedback feels immediate */
+.project-item__link:hover,
+.project-item__link:focus {
+  box-shadow: none;
+  transition: box-shadow 250ms ease-in-out;
+}
+
 /* ###################### SKILLS SECTION CSS ################################# */
 
 .my-skills {
@@ -416,17 +508,23 @@ h4 {
   margin-top: 30px;
 }
 
+/* Consolidated skill-list and skill-item styles (removed duplicate definitions) */
 .skill-list {
+  /* reset list padding and use flex layout for wrapping */
   padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  margin: 0;
+  align-items: center;
 }
 
 .skill-item {
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   display: inline-block;
-  margin: 0px 10px 10px 0px;
-  font-size: var(--fs-h4);
-  padding: 0.5em;
+  margin: 0;
+  padding: 0.38em 0.65em;
   box-shadow: var(--bs);
   transition: box-shadow 400ms ease-in-out;
 }
@@ -436,9 +534,44 @@ h4 {
   transition: box-shadow 250ms ease-in-out;
 }
 
+/* Compact 2x2 grid for skills to reduce vertical space */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 2rem;
+}
+
+.skill-group__title {
+  font-size: var(--fs-h4);
+  margin: 0 0 0.4rem 0;
+  color: var(--font-color);
+  font-weight: var(--fw-bold);
+}
+
+.skill-group {
+  margin: 0;
+}
+
+/* (Previous detailed .skill-list and .skill-item merged above) */
+@media (min-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 3rem;
+  }
+
+  .skill-item {
+    font-size: 1.05rem; /* slightly larger for readability */
+    padding: 0.55em 0.95em;
+  }
+}
+
 @media (min-width: 650px) {
   .my-skills {
     max-width: 1000px;
+  }
+  .my-projects {
+    max-width: 1000px;
+    margin-inline: auto;
   }
 }
 
