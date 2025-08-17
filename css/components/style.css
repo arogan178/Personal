@@ -12,10 +12,14 @@
   Define global CSS variables
 */
 :root {
-  --ff-primary: "Source Sans Pro", sans-serif; /* Primary font family */
-  --ff-secondary: "Source Code Pro", monospace; /* Secondary font family */
+  --ff-primary: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif; /* Primary font family */
+  --ff-secondary: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    "Roboto Mono", monospace; /* Secondary font family */
   --fw-reg: 300; /* Regular font weight */
   --fw-bold: 900; /* Bold font weight */
+  --body-weight: 400;
+  --heading-weight: 800;
   --clr-light: #f8f8f8; /* Light color */
   --clr-dark: #1a1a1a; /* Dark color */
   --clr-accent: #ad0e0e; /* Accent color */
@@ -113,6 +117,7 @@ body {
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
+  font-weight: var(--body-weight);
   line-height: 1.5;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -186,14 +191,17 @@ h4 {
 
 h1 {
   font-size: var(--fs-h1);
+  font-weight: var(--heading-weight);
 }
 
 h2 {
   font-size: var(--fs-h2);
+  font-weight: var(--heading-weight);
 }
 
 h3 {
   font-size: var(--fs-h3);
+  font-weight: var(--heading-weight);
 }
 
 h4 {
@@ -224,7 +232,6 @@ h4 {
   background: var(--clr-accent);
   padding: 0.25em 1em;
   font-family: var(--ff-secondary);
-  margin-bottom: 1em;
   color: var(--clr-light);
 }
 
@@ -425,8 +432,7 @@ h4 {
   border-radius: 10px;
   display: inline-block;
   margin: 0px 10px 10px 0px;
-  font-size: var(--fs-h4);
-  padding: 0.5em;
+  padding: 0.45em 0.75em; /* increased padding */
   box-shadow: var(--bs);
   transition: box-shadow 400ms ease-in-out;
 }
@@ -434,6 +440,51 @@ h4 {
 .skill-item:hover {
   box-shadow: none;
   transition: box-shadow 250ms ease-in-out;
+}
+
+/* Compact 2x2 grid for skills to reduce vertical space */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 2rem;
+}
+
+.skill-group__title {
+  font-size: var(--fs-h4);
+  margin: 0 0 0.4rem 0;
+  color: var(--font-color);
+  font-weight: var(--fw-bold);
+}
+
+.skill-group {
+  margin: 0;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.skill-item {
+  margin: 0;
+  padding: 0.38em 0.65em;
+  border-radius: 0.6rem;
+}
+
+@media (min-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 3rem;
+  }
+
+  .skill-item {
+    font-size: 1.05rem; /* slightly larger for readability */
+    padding: 0.55em 0.95em;
+  }
 }
 
 @media (min-width: 650px) {
