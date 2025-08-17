@@ -285,6 +285,7 @@ h4 {
 
 .about-me,
 .my-experience,
+.my-projects,
 .my-skills {
   opacity: 0;
   visibility: hidden;
@@ -293,6 +294,7 @@ h4 {
 
 .about-me.is-visible,
 .my-experience.is-visible,
+.my-projects.is-visible,
 .my-skills.is-visible {
   opacity: 1;
   visibility: visible;
@@ -416,10 +418,11 @@ h4 {
 }
 
 /* ###################### PROJECTS SECTION CSS ################################# */
-.projects {
+.my-projects {
   margin-inline: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  text-align: justify;
+  padding: 15px;
+  margin-top: 30px;
 }
 
 .projects-grid {
@@ -427,25 +430,23 @@ h4 {
   gap: 1rem;
 }
 
-.project {
+.project-item {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.02),
     rgba(255, 255, 255, 0.01)
   );
   border: 1px solid;
-  /* move padding to the inner link so the clickable area matches the visual card */
-  padding: 0;
   border-radius: 0.9rem;
   box-shadow: var(--bs);
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
-.project__title {
+.project-item__title {
   margin: 0 0 0.5rem 0;
 }
 
-.project__head {
+.project-item__head {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -459,7 +460,7 @@ h4 {
   object-fit: cover;
 }
 
-.project__subtitle {
+.project-item__subtitle {
   margin: 0 0 1rem 0;
   color: var(--font-color);
   opacity: 0.9;
@@ -467,8 +468,7 @@ h4 {
   line-height: 1.4;
 }
 
-/* Make the whole project article act as a single clickable link */
-.project__link {
+.project-item__link {
   display: block; /* fill the article */
   color: inherit;
   text-decoration: none;
@@ -477,14 +477,14 @@ h4 {
   width: 100%;
 }
 
-.project__link:focus-visible {
+.project-item__link:focus-visible {
   outline-offset: 4px;
   border-radius: 0.7rem;
 }
 
 /* Space between projects subtitle and grid */
 .section__subtitle--projects {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem; /* reduce to match other sections */
 }
 
 .project__links {
@@ -496,7 +496,7 @@ h4 {
   padding: 0.45rem 0.8rem;
 }
 
-.project:hover {
+.project-item:hover {
   box-shadow: none;
   transition: box-shadow 250ms ease-in-out;
 }
@@ -506,12 +506,6 @@ h4 {
 .project__link:focus {
   box-shadow: none;
   transition: box-shadow 250ms ease-in-out;
-}
-
-@media (min-width: 900px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* ###################### SKILLS SECTION CSS ################################# */
@@ -590,6 +584,10 @@ h4 {
 @media (min-width: 650px) {
   .my-skills {
     max-width: 1000px;
+  }
+  .my-projects {
+    max-width: 1000px;
+    margin-inline: auto;
   }
 }
 
