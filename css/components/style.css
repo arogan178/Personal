@@ -228,7 +228,8 @@ h4 {
 
 .section__subtitle--intro,
 .section__subtitle--about,
-.section__subtitle--skills {
+.section__subtitle--skills,
+.section__subtitle--projects {
   background: var(--clr-accent);
   padding: 0.25em 1em;
   font-family: var(--ff-secondary);
@@ -411,6 +412,105 @@ h4 {
   .job-desc > * {
     word-wrap: break-word;
     word-break: break-word;
+  }
+}
+
+/* ###################### PROJECTS SECTION CSS ################################# */
+.projects {
+  margin-inline: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid;
+  /* move padding to the inner link so the clickable area matches the visual card */
+  padding: 0;
+  border-radius: 0.9rem;
+  box-shadow: var(--bs);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.project__title {
+  margin: 0 0 0.5rem 0;
+}
+
+.project__head {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.project__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.project__subtitle {
+  margin: 0 0 1rem 0;
+  color: var(--font-color);
+  opacity: 0.9;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+/* Make the whole project article act as a single clickable link */
+.project__link {
+  display: block; /* fill the article */
+  color: inherit;
+  text-decoration: none;
+  padding: 1.2rem; /* provide the visual padding inside the card and make the full area clickable */
+  border-radius: 0.9rem; /* match article radius */
+  width: 100%;
+}
+
+.project__link:focus-visible {
+  outline-offset: 4px;
+  border-radius: 0.7rem;
+}
+
+/* Space between projects subtitle and grid */
+.section__subtitle--projects {
+  margin-bottom: 1.5rem;
+}
+
+.project__links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project__links a {
+  padding: 0.45rem 0.8rem;
+}
+
+.project:hover {
+  box-shadow: none;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+/* Also trigger the hover/focus styles when interacting with the inner link so the visual feedback feels immediate */
+.project__link:hover,
+.project__link:focus {
+  box-shadow: none;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
