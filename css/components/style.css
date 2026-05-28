@@ -17,11 +17,11 @@
   --ff-secondary: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     "Roboto Mono", monospace; /* Secondary font family */
   --fw-reg: 300; /* Regular font weight */
-  --fw-bold: 900; /* Bold font weight */
+  --fw-bold: 600; /* Bold font weight */
   --body-weight: 400;
-  --heading-weight: 800;
-  --clr-light: #f8f8f8; /* Light color */
-  --clr-dark: #1a1a1a; /* Dark color */
+  --heading-weight: 700;
+  --clr-light: #fafafa; /* Light color */
+  --clr-dark: #0a0a0a; /* Dark color */
   --clr-accent: #ad0e0e; /* Accent color */
   --fs-h1: 2.5rem;
   --fs-h2: 2rem;
@@ -33,6 +33,12 @@
   --background-color: var(--clr-dark); /* Background color */
   --font-color: var(--clr-light); /* Font color */
   --toggle-color: var(--clr-light); /* Toggle color */
+  --clr-border: rgba(255, 255, 255, 0.1);
+  --clr-card-start: rgba(255, 255, 255, 0.03);
+  --clr-card-end: rgba(255, 255, 255, 0);
+  --clr-header-bg: rgba(10, 10, 10, 0.75);
+  --bs-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --bs-card-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /*   Media query for screens wider than 900px */
@@ -70,11 +76,52 @@
   :root {
     --background-color: var(--clr-dark);
     --font-color: var(--clr-light);
+    --toggle-color: var(--clr-light);
+    --clr-border: rgba(255, 255, 255, 0.1);
+    --clr-card-start: rgba(255, 255, 255, 0.03);
+    --clr-card-end: rgba(255, 255, 255, 0);
+    --clr-header-bg: rgba(10, 10, 10, 0.75);
+    --bs-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --bs-card-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
   }
 
   :root.light {
     --background-color: var(--clr-light);
     --font-color: var(--clr-dark);
+    --toggle-color: var(--clr-dark);
+    --clr-border: rgba(0, 0, 0, 0.1);
+    --clr-card-start: rgba(0, 0, 0, 0.02);
+    --clr-card-end: rgba(0, 0, 0, 0);
+    --clr-header-bg: rgba(250, 250, 250, 0.75);
+    --bs-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --bs-card-hover: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/*   Media query light theme preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: var(--clr-light);
+    --font-color: var(--clr-dark);
+    --toggle-color: var(--clr-dark);
+    --clr-border: rgba(0, 0, 0, 0.1);
+    --clr-card-start: rgba(0, 0, 0, 0.02);
+    --clr-card-end: rgba(0, 0, 0, 0);
+    --clr-header-bg: rgba(250, 250, 250, 0.75);
+    --bs-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --bs-card-hover: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  :root.dark {
+    --background-color: var(--clr-dark);
+    --font-color: var(--clr-light);
+    --toggle-color: var(--clr-light);
+    --clr-border: rgba(255, 255, 255, 0.1);
+    --clr-card-start: rgba(255, 255, 255, 0.03);
+    --clr-card-end: rgba(255, 255, 255, 0);
+    --clr-header-bg: rgba(10, 10, 10, 0.75);
+    --bs-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --bs-card-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -94,6 +141,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 3em;
+  background-color: var(--background-color);
 }
 
 ::-webkit-scrollbar {
@@ -113,6 +162,11 @@ html {
 
 body {
   background-color: var(--background-color);
+  background-image: 
+    linear-gradient(to right, rgba(128, 128, 128, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
   color: var(--font-color);
   margin: 0;
   font-family: var(--ff-primary);
@@ -143,6 +197,12 @@ section {
   padding: 1.5em 2em;
 }
 
+@media (min-width: 650px) {
+  section {
+    padding: 3em 2em;
+  }
+}
+
 img {
   display: block;
   max-width: 90%;
@@ -166,27 +226,31 @@ strong {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 3px;
   bottom: 0;
   left: 0;
-  background-color: var(--background-color);
-  filter: invert(1);
-  transform-origin: bottom right;
-  transition: transform 0.5s ease-out;
-  z-index: -1;
+  background-color: var(--clr-accent);
+  box-shadow: 0 0 6px rgba(173, 14, 14, 0.4);
+  transform-origin: bottom left;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.name-element:hover::after {
+.name-element.animating::after {
   transform: scaleX(1);
-  transform-origin: bottom left;
+}
+
+.name-element.retracting::after {
+  transform: scaleX(0);
+  transform-origin: bottom right;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  line-height: 1;
+  line-height: 1.1;
   margin: 5px;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -218,22 +282,27 @@ h4 {
 }
 
 .section__title--intro strong {
-  display: block;
+  display: inline-block;
 }
 
 .section__subtitle {
-  margin: auto;
-  font-size: var(--fs-h3);
+  margin: 0 0 1rem 0;
+  font-size: var(--fs-h4);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about,
 .section__subtitle--skills,
 .section__subtitle--projects {
+  display: inline-block;
   background: var(--clr-accent);
-  padding: 0.25em 1em;
+  padding: 0.2em 0.8em;
   font-family: var(--ff-secondary);
-  color: var(--clr-light);
+  color: #fafafa;
+  font-size: var(--fs-body);
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(173, 14, 14, 0.2);
+  margin-top: 0.2em;
 }
 
 /* ###################### INTRO SECTION CSS ################################# */
@@ -248,6 +317,11 @@ h4 {
   box-shadow: var(--bs);
   border-top-right-radius: 4.5em;
   border-bottom-left-radius: 4.5em;
+  transition: transform 300ms ease;
+}
+
+.intro__img:hover {
+  transform: scale(1.02);
 }
 
 .section__subtitle--intro {
@@ -259,10 +333,10 @@ h4 {
     display: grid;
     max-width: 1000px;
     padding-top: 35vh;
-    padding-bottom: 1vh;
+    padding-bottom: 15vh;
     grid-column-gap: 1em;
     grid-template-areas: "img title" "img subtitle";
-    grid-template-columns: min-content max-content;
+    grid-template-columns: min-content 1fr;
   }
 
   .intro__img {
@@ -273,13 +347,10 @@ h4 {
   }
 
   .section__subtitle--intro {
+    grid-area: subtitle;
     align-self: start;
-    grid-column: -1/1;
-    grid-row: 2;
-    text-align: right;
-    position: relative;
-    left: -1.5em;
-    width: calc(100% + 1em);
+    width: 100%; /* Stretch full width */
+    margin-top: 0.5em;
   }
 }
 
@@ -289,7 +360,8 @@ h4 {
 .my-skills {
   opacity: 0;
   visibility: hidden;
-  transition: all 700ms ease-in-out;
+  transform: translateY(40px);
+  transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .about-me.is-visible,
@@ -298,14 +370,18 @@ h4 {
 .my-skills.is-visible {
   opacity: 1;
   visibility: visible;
-  padding-top: 5em;
+  transform: translateY(0);
+}
+
+.about-me.is-visible {
+  padding-top: 8em;
 }
 
 /* ###################### ABOUT ME SECTION CSS ################################# */
 
 .about-me {
   margin-inline: auto;
-  padding-top: 10em;
+  padding-top: 5em;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -314,6 +390,19 @@ h4 {
   box-shadow: var(--bs);
   border-top-left-radius: 2.5em;
   border-bottom-right-radius: 2.5em;
+  transition: transform 300ms ease;
+  position: relative;
+  z-index: 2;
+}
+
+.about-me__img:hover {
+  transform: scale(1.02);
+}
+
+@media (min-width: 650px) {
+  .about-me__img {
+    margin-bottom: -80px;
+  }
 }
 
 @media (min-width: 650px) {
@@ -321,7 +410,7 @@ h4 {
     max-width: 1000px;
     display: grid;
     grid-template-columns: 1fr 200px;
-    grid-template-areas: "title img" "subtitle img" "text img";
+    grid-template-areas: "title img" "subtitle subtitle" "text text";
     grid-column-gap: 2em;
   }
 
@@ -330,13 +419,10 @@ h4 {
   }
 
   .section__subtitle--about {
-    grid-column: 1/-1;
-    grid-row: 2;
-    position: relative;
-    left: -1em;
-    width: calc(100% + 3em);
-    padding-left: 1em;
-    padding-right: calc(200px + 4em);
+    grid-area: subtitle;
+    align-self: start;
+    width: 100%; /* Stretch full width */
+    margin-top: 1em;
   }
 
   .about-me__img {
@@ -346,7 +432,7 @@ h4 {
   }
 
   .about-me__body {
-    grid-column: span 2;
+    grid-area: text;
   }
 }
 
@@ -354,33 +440,43 @@ h4 {
 
 .my-experience {
   margin-top: 2em;
+  padding: 15px; /* Added matching padding */
 }
 
-.section__title--experience {
-  position: relative;
-  text-align: center;
-}
-
-.section__title--experience::after,
-.section__title--experience::before {
-  content: "";
-  display: block;
-  width: 20vh;
-  height: 1px;
-  margin: 0.5em auto 0.5em;
-  background: var(--background-color);
-  filter: invert(1);
-  opacity: 0.25;
-  transition: background-color 700ms ease-in-out;
-}
+/* Removed center alignment for Experience title to match others */
 
 .experiences {
   margin-bottom: 4em;
+  margin-inline: auto; /* Ensure experiences grid is centered */
 }
 
 .job {
   max-width: 1000px;
   margin-inline: auto;
+  padding: 24px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--bs-card);
+  backdrop-filter: blur(10px);
+  will-change: transform;
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.job:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bs-card-hover);
+}
+
+.job .company {
+  font-weight: 400;
+  color: var(--font-color);
+  opacity: 0.8;
+  font-size: var(--fs-body);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-style: italic;
+  pointer-events: none;
 }
 
 .job + .job {
@@ -406,7 +502,6 @@ h4 {
   }
 
   .job {
-    padding: 20px;
     margin: 1em;
     scroll-snap-align: center;
   }
@@ -431,15 +526,12 @@ h4 {
 }
 
 .project-item {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  border: 1px solid;
-  border-radius: 0.9rem;
-  box-shadow: var(--bs);
-  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  box-shadow: var(--bs-card);
+  backdrop-filter: blur(10px);
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .project-item__title {
@@ -484,19 +576,18 @@ h4 {
 
 /* Space between projects subtitle and grid */
 .section__subtitle--projects {
-  margin-bottom: 0.5rem; /* reduce to match other sections */
+  margin-bottom: 1.5rem; /* reduce to match other sections */
 }
 
 .project-item:hover {
-  box-shadow: none;
-  transition: box-shadow 250ms ease-in-out;
+  transform: translateY(-4px);
+  box-shadow: var(--bs-card-hover);
 }
 
 /* Also trigger the hover/focus styles when interacting with the inner link so the visual feedback feels immediate */
 .project-item__link:hover,
 .project-item__link:focus {
-  box-shadow: none;
-  transition: box-shadow 250ms ease-in-out;
+  outline: none;
 }
 
 /* ###################### SKILLS SECTION CSS ################################# */
@@ -508,64 +599,108 @@ h4 {
   margin-top: 30px;
 }
 
-/* Consolidated skill-list and skill-item styles (removed duplicate definitions) */
+/* Skill groups as cards matching the glassmorphism language */
+.skill-group {
+  background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  box-shadow: var(--bs-card);
+  backdrop-filter: blur(10px);
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.skill-group.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--clr-accent);
+  border-radius: 12px 12px 0 0;
+}
+
+.skill-group:hover {
+  box-shadow: var(--bs-card-hover);
+}
+
+/* Staggered entrance delays */
+.skill-group:nth-child(1) { transition-delay: 0s; }
+.skill-group:nth-child(2) { transition-delay: 0.1s; }
+.skill-group:nth-child(3) { transition-delay: 0.2s; }
+.skill-group:nth-child(4) { transition-delay: 0.3s; }
+
 .skill-list {
-  /* reset list padding and use flex layout for wrapping */
   padding-inline-start: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 0.6rem;
+  gap: 0.5rem 0.6rem;
   margin: 0;
   align-items: center;
 }
 
 .skill-item {
-  border: 1px solid;
-  border-radius: 0.6rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
   display: inline-block;
   margin: 0;
-  padding: 0.38em 0.65em;
-  box-shadow: var(--bs);
-  transition: box-shadow 400ms ease-in-out;
+  padding: 0.4em 0.75em;
+  box-shadow: var(--bs-card);
+  backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .skill-item:hover {
-  box-shadow: none;
-  transition: box-shadow 250ms ease-in-out;
+  transform: translateY(-2px);
+  box-shadow: var(--bs-card-hover);
+  border-color: var(--clr-accent);
 }
 
-/* Compact 2x2 grid for skills to reduce vertical space */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem 2rem;
+  gap: 1.25rem;
 }
 
 .skill-group__title {
   font-size: var(--fs-h4);
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.75rem 0;
   color: var(--font-color);
   font-weight: var(--fw-bold);
 }
 
-.skill-group {
-  margin: 0;
-}
-
-/* (Previous detailed .skill-list and .skill-item merged above) */
 @media (min-width: 900px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 3rem;
+    gap: 1.5rem;
   }
 
   .skill-item {
-    font-size: 1.05rem; /* slightly larger for readability */
-    padding: 0.55em 0.95em;
+    font-size: 0.95rem;
+    padding: 0.5em 0.85em;
   }
 }
 
 @media (min-width: 650px) {
+  .my-experience {
+    max-width: 1000px;
+    margin-inline: auto; /* Center the experience container on desktop */
+  }
   .my-skills {
     max-width: 1000px;
   }
@@ -578,12 +713,12 @@ h4 {
 /* ###################### SCROLL PROGRESS CSS ################################# */
 
 .scroll-progress {
-  position: sticky;
-  bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 0%;
-  height: 5px;
+  height: 3px;
   background: var(--clr-accent);
-  border-radius: 10px;
   z-index: 1000;
   animation: scroll-progress linear;
   animation-timeline: scroll();

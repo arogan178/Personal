@@ -4,8 +4,9 @@
   background: var(--background-color);
   color: var(--font-color);
   text-align: center;
-  padding: 1em;
-  font-size: var(--fs-h4);
+  padding: 2em 1em;
+  font-size: var(--fs-body);
+  border-top: 1px solid var(--clr-border);
   transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
@@ -56,4 +57,14 @@
 
 .social-list__link {
   padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 250ms ease;
+}
+
+.social-list__link:hover {
+  transform: translateY(-2px);
+  color: var(--clr-accent);
 }

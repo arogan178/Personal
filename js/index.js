@@ -42,6 +42,32 @@
     });
   }
 
+  // Highlights the active nav link based on scroll position.
+  function activeNavHighlight() {
+    const sections = document.querySelectorAll(".section[id]");
+    const navLinks = document.querySelectorAll(".nav__link");
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.removeAttribute("data-active"));
+            const id = entry.target.getAttribute("id");
+            const activeLink = document.querySelector(`.nav__link[href="#${id}"]`);
+            if (activeLink) activeLink.setAttribute("data-active", "");
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -55% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
   // Manages header bar opacity based on scroll position.
   function headerBarOpacity() {
     const header = document.querySelector(".header__bar");
@@ -58,24 +84,54 @@
 
   // Manages visibility of sections based on viewport intersection.
   function sectionVisibility() {
-    const sections = document.querySelectorAll(".section");
+    const sections = document.querySelectorAll(".section:not(.intro)");
     if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.65) {
+          if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.65,
+        rootMargin: "0px 0px -50% 0px",
+        threshold: 0,
       }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      section.classList.remove("is-visible", "reveal");
+      observer.observe(section);
+    });
+  }
+
+  // Manages staggered entrance of skill groups inside the skills section.
+  function skillGroupVisibility() {
+    const groups = document.querySelectorAll(".skill-group");
+    if (groups.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -5% 0px",
+        threshold: 0.2,
+      }
+    );
+
+    groups.forEach((group) => {
+      group.classList.remove("is-visible");
+      observer.observe(group);
+    });
   }
 
   // Enhanced horizontal scroll with better performance
@@ -111,13 +167,30 @@
     );
   }
 
+  // Preloads the resume PDF when hovering the download link.
+  function preloadResumeOnHover() {
+    const link = document.querySelector('a[href$=".pdf"]');
+    if (!link) return;
+
+    link.addEventListener("mouseenter", () => {
+      const preload = document.createElement("link");
+      preload.rel = "prefetch";
+      preload.href = link.getAttribute("href");
+      preload.as = "document";
+      document.head.appendChild(preload);
+    }, { once: true });
+  }
+
   // Initialize all functions when DOM is ready
   function init() {
     try {
       headerBarOpacity();
       navToggle();
       sectionVisibility();
+      skillGroupVisibility();
+      activeNavHighlight();
       horizontalScroll();
+      preloadResumeOnHover();
     } catch (error) {
       console.error("Error initializing website features:", error);
     }
@@ -131,7 +204,6 @@
     "scroll",
     throttle(() => {
       headerBarOpacity();
-      sectionVisibility();
     }, 16),
     { passive: true }
   ); // ~60fps throttling
