@@ -132,12 +132,20 @@ html.dark .theme-toggle .sun-icon {
 
 .nav-toggle {
   background: transparent;
-  border: 0;
+  border: none;
   cursor: pointer;
   padding: 0;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 36px;
+  height: 36px;
+  transition: background-color 200ms ease;
+}
+
+.nav-toggle:hover {
+  background-color: var(--clr-border);
 }
 
 .nav-open .nav {
@@ -170,20 +178,19 @@ html.dark .theme-toggle .sun-icon {
 .hamburger::before,
 .hamburger::after {
   background: var(--font-color);
-  width: 2em;
-  height: 3px;
-  border-radius: 1em;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 1rem;
   transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hamburger__icon {
-  filter: 0;
-  transition: opacity 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger__icon:hover {
-  opacity: 0.7;
-}
 
 .hamburger::before {
   top: 6px;
