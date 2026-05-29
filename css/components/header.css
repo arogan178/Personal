@@ -185,6 +185,9 @@ html.dark .theme-toggle .sun-icon {
 }
 
 .hamburger__icon {
+  position: relative;
+  width: 1.5rem;
+  height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
