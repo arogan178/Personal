@@ -143,7 +143,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 3em; /* Accounts for fixed header */
   scrollbar-width: thin; /* Firefox scrollbar width */
-  scrollbar-color: var(--clr-border) transparent; /* Firefox scrollbar color */
+  scrollbar-color: var(--clr-scrollbar) transparent; /* Firefox scrollbar color */
 }
 
 ::selection {
@@ -161,7 +161,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--clr-border);
+  background-color: var(--clr-scrollbar);
   border-radius: 10px;
   transition: background-color 300ms ease;
 }

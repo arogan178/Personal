@@ -12,6 +12,7 @@ const COLOR_SCHEMES = {
     "--font-color": "var(--clr-dark)",
     "--toggle-color": "var(--clr-dark)",
     "--clr-border": "rgba(0, 0, 0, 0.1)",
+    "--clr-scrollbar": "rgba(0, 0, 0, 0.35)",
     "--clr-card-start": "rgba(255, 255, 255, 0.4)",
     "--clr-card-end": "rgba(255, 255, 255, 0.1)",
     "--clr-header-bg": "rgba(173, 14, 14, 0.85)", /* Frosted red accent */
@@ -24,6 +25,7 @@ const COLOR_SCHEMES = {
     "--font-color": "var(--clr-light)",
     "--toggle-color": "var(--clr-light)",
     "--clr-border": "rgba(255, 255, 255, 0.1)",
+    "--clr-scrollbar": "rgba(255, 255, 255, 0.35)",
     "--clr-card-start": "rgba(255, 255, 255, 0.05)",
     "--clr-card-end": "rgba(255, 255, 255, 0.01)",
     "--clr-header-bg": "rgba(173, 14, 14, 0.85)", /* Frosted red accent */
