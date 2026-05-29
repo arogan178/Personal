@@ -124,6 +124,7 @@
             </div>
 
             <label class="toggle-switch" for="toggle-input">
+              <span class="sr-only">Toggle dark mode</span>
               <input id="toggle-input" type="checkbox" />
               <div class="toggle-switch__control"></div>
             </label>
@@ -184,7 +185,10 @@
           src="img/andrea_casual.jpg"
           alt="Andrea sitting on a wall looking philosophical"
           class="intro__img"
-          loading="lazy"
+          width="2159"
+          height="2160"
+          loading="eager"
+          fetchpriority="high"
         />
       </section>
 
@@ -228,6 +232,8 @@
           src="img/andrea_corporate.jpg"
           alt="A picture of Andrea in a corporate setting"
           class="about-me__img"
+          width="629"
+          height="565"
           loading="lazy"
         />
       </section>
@@ -317,6 +323,7 @@
                   class="project__logo"
                   width="56"
                   height="56"
+                  loading="lazy"
                 />
                 <h3 class="project-item__title">MacroTrackr</h3>
               </div>

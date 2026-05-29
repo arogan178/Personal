@@ -141,18 +141,21 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3em;
-  background-color: var(--background-color);
+  scroll-padding-top: 3em; /* Accounts for fixed header */
+}
+
+::selection {
+  background-color: var(--clr-accent);
+  color: #fafafa;
 }
 
 ::-webkit-scrollbar {
-  scrollbar-color: transparent;
-  width: 0;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  display: none;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
