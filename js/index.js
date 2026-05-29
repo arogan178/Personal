@@ -68,14 +68,21 @@
     sections.forEach((section) => observer.observe(section));
   }
 
-  // Manages header bar opacity based on scroll position.
-  function headerBarOpacity() {
+  // Manages header bar background style based on scroll position.
+  function headerBarScroll() {
     const header = document.querySelector(".header__bar");
     if (!header) return;
 
+    // Check initial position on load
+    if (window.scrollY > 50) {
+      header.classList.add("is-scrolled");
+    }
+
     const handleScroll = throttle(() => {
-      if (window.scrollY > 450 && !header.classList.contains("is-visible")) {
-        header.classList.add("is-visible");
+      if (window.scrollY > 50) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
       }
     }, 100);
 
@@ -184,7 +191,7 @@
   // Initialize all functions when DOM is ready
   function init() {
     try {
-      headerBarOpacity();
+      headerBarScroll();
       navToggle();
       sectionVisibility();
       skillGroupVisibility();
@@ -203,7 +210,7 @@
   window.addEventListener(
     "scroll",
     throttle(() => {
-      headerBarOpacity();
+      headerBarScroll();
     }, 16),
     { passive: true }
   ); // ~60fps throttling

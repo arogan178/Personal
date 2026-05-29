@@ -1,11 +1,9 @@
 /* ###################### HEADER BAR CSS ################################# */
 
 .header__bar {
-  background: var(--clr-header-bg);
+  background: transparent;
   color: var(--font-color);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--clr-border);
+  border-bottom: 1px solid transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,15 +12,14 @@
   z-index: 10;
   height: 3.5em; /* Taller, more modern header */
   padding: 0 1.5em;
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-  visibility: hidden;
+  transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
 }
 
-.header__bar.is-visible {
-  height: 3.5em;
-  opacity: 1;
-  visibility: visible;
+.header__bar.is-scrolled {
+  background: var(--clr-header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--clr-border);
 }
 
 /* ###################### Dark Theme Menu CSS ################################# */
