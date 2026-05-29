@@ -261,6 +261,8 @@ h4 {
   line-height: 1.1;
   margin: 5px;
   letter-spacing: -0.02em;
+  font-size: var(--fs-h4);
+  pointer-events: none;
 }
 
 h1 {
@@ -276,11 +278,6 @@ h2 {
 h3 {
   font-size: var(--fs-h3);
   font-weight: var(--heading-weight);
-}
-
-h4 {
-  font-size: var(--fs-h4);
-  pointer-events: none;
 }
 
 .section__title {
@@ -309,10 +306,10 @@ h4 {
   padding: 0.2em 0.8em;
   font-family: var(--ff-secondary);
   color: #fafafa;
-  font-size: var(--fs-body);
+  font-size: var(--fs-h4);
   border-radius: 6px;
   box-shadow: 0 4px 6px -1px rgba(173, 14, 14, 0.2);
-  margin-top: 0.2em;
+  margin-bottom: 1.5rem; /* reduce to match other sections */
 }
 
 /* ###################### INTRO SECTION CSS ################################# */
@@ -366,8 +363,7 @@ h4 {
 
 .about-me,
 .my-experience,
-.my-projects,
-.my-skills {
+.my-projects {
   opacity: 0;
   visibility: hidden;
   transform: translateY(40px);
@@ -585,9 +581,6 @@ h4 {
 }
 
 /* Space between projects subtitle and grid */
-.section__subtitle--projects {
-  margin-bottom: 1.5rem; /* reduce to match other sections */
-}
 
 .project-item:hover {
   transform: translateY(-4px);
@@ -607,6 +600,10 @@ h4 {
   text-align: justify;
   padding: 15px;
   margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+  transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Skill groups as cards matching the glassmorphism language */
