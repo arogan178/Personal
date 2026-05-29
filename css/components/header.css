@@ -193,8 +193,6 @@ html.dark .theme-toggle .sun-icon {
   justify-content: center;
 }
 
-.hamburger__icon:hover {
-
 .hamburger::before {
   top: 6px;
 }
