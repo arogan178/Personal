@@ -141,7 +141,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3em; /* Accounts for fixed header */
+  scroll-padding-top: 4.5em; /* Accounts for fixed header */
   scrollbar-width: thin; /* Firefox scrollbar width */
   scrollbar-color: var(--clr-scrollbar) transparent; /* Firefox scrollbar color */
 }

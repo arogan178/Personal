@@ -3,7 +3,8 @@ const DARK_THEME = "dark";
 const PREFERRED_THEME_KEY = "preferred-theme";
 const DARK_SCHEME_QUERY = "(prefers-color-scheme: dark)";
 
-const toggle = document.getElementById("toggle-input");
+const toggleBtn = document.getElementById("theme-toggle");
+let currentTheme = LIGHT_THEME;
 
 // Define color schemes.
 const COLOR_SCHEMES = {
@@ -37,11 +38,18 @@ const COLOR_SCHEMES = {
 
 // Sets the theme by updating CSS variables.
 function setTheme(theme, persist = false) {
+  currentTheme = theme;
   const colorScheme = COLOR_SCHEMES[theme];
   const rootStyle = document.documentElement.style;
 
   for (let property in colorScheme) {
     rootStyle.setProperty(property, colorScheme[property]);
+  }
+  
+  if (theme === DARK_THEME) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
   }
 
   if (persist) {
@@ -51,13 +59,20 @@ function setTheme(theme, persist = false) {
 
 // Updates the UI toggle based on the current theme.
 function updateUI(theme) {
-  toggle.checked = theme === DARK_THEME;
+  if (toggleBtn) {
+    if (theme === DARK_THEME) {
+      toggleBtn.classList.add("dark-mode");
+    } else {
+      toggleBtn.classList.remove("dark-mode");
+    }
+  }
 }
 
 // Handles the theme toggle event.
 function handleThemeToggle() {
-  const newTheme = toggle.checked ? DARK_THEME : LIGHT_THEME;
+  const newTheme = currentTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME;
   setTheme(newTheme, true);
+  updateUI(newTheme);
 }
 
 // Initializes the theme based on user preference or saved theme.
@@ -71,7 +86,9 @@ function initializeTheme() {
   updateUI(preferredTheme);
 }
 
-toggle.addEventListener("click", handleThemeToggle);
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", handleThemeToggle);
+}
 
 // Initialize the theme when the script loads.
 initializeTheme();
