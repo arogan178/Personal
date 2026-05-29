@@ -142,6 +142,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 3em; /* Accounts for fixed header */
+  scrollbar-width: thin; /* Firefox scrollbar width */
+  scrollbar-color: var(--clr-border) transparent; /* Firefox scrollbar color */
 }
 
 ::selection {
