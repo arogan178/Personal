@@ -41,6 +41,11 @@
   right: 32px;
 }
 
+.nav-open #back-to-top {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .btn-hide {
   opacity: 0;
   pointer-events: none;
