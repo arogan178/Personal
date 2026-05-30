@@ -446,75 +446,97 @@ h3 {
 
 .my-experience {
   margin-top: 2em;
-  padding: 15px; /* Added matching padding */
+  padding: 15px;
 }
 
-/* Removed center alignment for Experience title to match others */
-
 .experiences {
-  margin-bottom: 4em;
-  margin-inline: auto; /* Ensure experiences grid is centered */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .job {
-  max-width: 1000px;
-  margin-inline: auto;
-  padding: 24px;
+  padding: 1.5rem;
   border-radius: 12px;
   background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
   border: 1px solid var(--clr-border);
   box-shadow: var(--bs-card);
   backdrop-filter: blur(10px);
-  will-change: transform;
-  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .job:hover {
   transform: translateY(-4px);
   box-shadow: var(--bs-card-hover);
+  border-color: rgba(173, 14, 14, 0.4);
+}
+
+.job__title {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--fs-h4);
 }
 
 .job .company {
-  font-weight: 400;
+  font-weight: 500;
   color: var(--font-color);
-  opacity: 0.8;
-  font-size: var(--fs-body);
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.95rem;
+  margin: 0 0 0.15rem 0;
   pointer-events: none;
 }
 
-.job + .job {
-  margin-top: 1em;
+.job__date {
+  font-size: 0.85rem;
+  opacity: 0.45;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+
+.job-desc {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  list-style: none;
 }
 
 .job-desc li {
-  margin-bottom: 1em;
+  position: relative;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.job-desc li::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  opacity: 0.5;
+}
+
+.job-desc li:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 650px) {
-  .experiences {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100%, 1fr));
-    gap: 10rem;
+  .my-experience {
     max-width: 1000px;
-    margin: auto;
-    grid-auto-flow: column;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    align-items: center;
+    margin-inline: auto;
   }
 
   .job {
-    margin: 1em;
-    scroll-snap-align: center;
+    padding: 2rem;
   }
 
-  .job-desc > * {
-    word-wrap: break-word;
-    word-break: break-word;
+  .job-desc li {
+    font-size: 1rem;
   }
 }
 
