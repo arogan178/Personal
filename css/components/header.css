@@ -81,15 +81,15 @@ html.dark .theme-toggle .sun-icon {
   position: fixed;
   background: var(--clr-nav-bg, rgba(10, 10, 10, 0.85));
   color: var(--font-color);
-  top: 3.5em; /* matches new header height */
-  height: calc(100vh - 3.5em);
+  top: 0;
+  height: 100vh;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 9;
   transform: translate(100%);
   transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .nav__list {
