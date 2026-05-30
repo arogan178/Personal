@@ -141,39 +141,6 @@
     });
   }
 
-  // Enhanced horizontal scroll with better performance
-  function horizontalScroll() {
-    const experiences = document.querySelector(".experiences");
-    if (!experiences) return;
-
-    let isScrollingHorizontally = false;
-
-    experiences.addEventListener(
-      "wheel",
-      (evt) => {
-        if (isScrollingHorizontally) return;
-
-        const scrollAmount = evt.deltaY * 10;
-        const maxScrollLeft = experiences.scrollWidth - experiences.clientWidth;
-
-        const canScrollLeft = scrollAmount < 0 && experiences.scrollLeft > 0;
-        const canScrollRight =
-          scrollAmount > 0 && experiences.scrollLeft < maxScrollLeft;
-
-        if (canScrollLeft || canScrollRight) {
-          evt.preventDefault();
-          experiences.scrollLeft += scrollAmount;
-          isScrollingHorizontally = true;
-
-          setTimeout(() => {
-            isScrollingHorizontally = false;
-          }, 300); // Reduced delay for better responsiveness
-        }
-      },
-      { passive: false }
-    );
-  }
-
   // Preloads the resume PDF when hovering the download link.
   function preloadResumeOnHover() {
     const link = document.querySelector('a[href$=".pdf"]');
@@ -196,7 +163,6 @@
       sectionVisibility();
       skillGroupVisibility();
       activeNavHighlight();
-      horizontalScroll();
       preloadResumeOnHover();
     } catch (error) {
       console.error("Error initializing website features:", error);
