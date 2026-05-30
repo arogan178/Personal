@@ -773,6 +773,8 @@ h3 {
 .skill-group:nth-child(2) { transition-delay: 0.1s, 0.1s, 0s, 0s; }
 .skill-group:nth-child(3) { transition-delay: 0.2s, 0.2s, 0s, 0s; }
 .skill-group:nth-child(4) { transition-delay: 0.3s, 0.3s, 0s, 0s; }
+.skill-group:nth-child(5) { transition-delay: 0.4s, 0.4s, 0s, 0s; }
+.skill-group:nth-child(6) { transition-delay: 0.5s, 0.5s, 0s, 0s; }
 
 .skills-grid {
   display: grid;
