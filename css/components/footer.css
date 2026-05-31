@@ -36,17 +36,31 @@
   font-weight: var(--fw-bold);
   margin: 0 1em;
   text-decoration: none;
-  transition: opacity 300ms ease;
+  position: relative;
+  transition: opacity 300ms ease, color 300ms ease;
+}
+
+.footer__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--clr-accent);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer__link:hover {
-  text-decoration: underline;
-  opacity: 0.7;
+  opacity: 1;
+  color: var(--clr-accent);
 }
 
-.footer__link:hover,
-.footer__link:hover {
-  text-decoration: underline;
+.footer__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .social-list {

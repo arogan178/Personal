@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 200ms ease, color 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease, transform 150ms ease;
   position: relative;
   overflow: hidden;
   width: 36px;
@@ -47,6 +47,10 @@
 
 .theme-toggle:hover {
   background-color: var(--clr-border);
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
 }
 
 .theme-toggle svg {
@@ -87,7 +91,8 @@ html.dark .theme-toggle .sun-icon {
   right: 0;
   z-index: 9;
   transform: translate(100%);
-  transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1), visibility 350ms;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -101,6 +106,12 @@ html.dark .theme-toggle .sun-icon {
   align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.nav__item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav__link {
@@ -138,16 +149,33 @@ html.dark .theme-toggle .sun-icon {
   justify-content: center;
   width: 36px;
   height: 36px;
-  transition: background-color 200ms ease;
+  transition: background-color 200ms ease, transform 150ms ease;
 }
 
 .nav-toggle:hover {
   background-color: var(--clr-border);
 }
 
+.nav-toggle:active {
+  transform: scale(0.92);
+}
+
 .nav-open .nav {
   transform: translateX(0);
+  visibility: visible;
 }
+
+.nav-open .nav__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-open .nav__item:nth-child(1) { transition-delay: 100ms; }
+.nav-open .nav__item:nth-child(2) { transition-delay: 150ms; }
+.nav-open .nav__item:nth-child(3) { transition-delay: 200ms; }
+.nav-open .nav__item:nth-child(4) { transition-delay: 250ms; }
+.nav-open .nav__item:nth-child(5) { transition-delay: 300ms; }
+.nav-open .nav__item:nth-child(6) { transition-delay: 350ms; }
 
 .nav-open .nav-toggle .hamburger {
   transform: rotate(0.625turn);
