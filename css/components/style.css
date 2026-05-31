@@ -280,7 +280,8 @@ strong {
 .name-element {
   font-family: var(--ff-secondary);
   position: relative;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.05em;
+  z-index: 2;
 }
 
 .name-element::after {
@@ -289,7 +290,7 @@ strong {
   width: 100%;
   transform: scaleX(0);
   height: 3px;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   background-color: var(--clr-accent);
   box-shadow: 0 0 6px rgba(173, 14, 14, 0.4);
@@ -338,6 +339,8 @@ h3 {
 
 .section__title--intro {
   font-weight: var(--fw-reg);
+  position: relative;
+  z-index: 5;
 }
 
 .section__title--intro strong {
