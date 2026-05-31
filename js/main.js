@@ -35,8 +35,8 @@
       "--toggle-color": "var(--clr-dark)",
       "--clr-border": "rgba(0, 0, 0, 0.08)",
       "--clr-scrollbar": "rgba(0, 0, 0, 0.2)",
-      "--clr-card-start": "rgba(255, 255, 255, 0.6)",
-      "--clr-card-end": "rgba(255, 255, 255, 0.2)",
+      "--clr-card-start": "#ffffff",
+      "--clr-card-end": "#f3f3f3",
       "--clr-header-bg": "rgba(250, 250, 250, 0.85)", 
       "--clr-nav-bg": "rgba(250, 250, 250, 0.95)", 
       "--bs-card": "0 8px 30px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.02)",
@@ -49,8 +49,8 @@
       "--toggle-color": "var(--clr-light)",
       "--clr-border": "rgba(255, 255, 255, 0.08)",
       "--clr-scrollbar": "rgba(255, 255, 255, 0.2)",
-      "--clr-card-start": "rgba(255, 255, 255, 0.03)",
-      "--clr-card-end": "rgba(255, 255, 255, 0.01)",
+      "--clr-card-start": "#1a1a1a",
+      "--clr-card-end": "#111111",
       "--clr-header-bg": "rgba(10, 10, 10, 0.85)", 
       "--clr-nav-bg": "rgba(10, 10, 10, 0.95)", 
       "--bs-card": "0 8px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
@@ -243,6 +243,22 @@
     });
   }
 
+  function updateScrollProgress() {
+    const scrollProgress = document.querySelector(".scroll-progress");
+    if (!scrollProgress) return;
+
+    const handleScroll = () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      scrollProgress.style.width = `${progress}%`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initialize state
+    handleScroll();
+  }
+
   // --- Name Randomizer Effect ---
 
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
@@ -325,6 +341,7 @@
       activeNavHighlight();
       preloadResumeOnHover();
       createBackToTopButton();
+      updateScrollProgress();
       initializeNameRandomizer("#Name");
     } catch (error) {
       console.error("Error initializing website features:", error);
