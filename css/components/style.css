@@ -369,7 +369,7 @@ h3 {
 
 .intro {
   padding-top: 15vh;
-  padding-bottom: 15vh;
+  padding-bottom: 25vh;
   margin-inline: auto;
 }
 
@@ -396,7 +396,7 @@ h3 {
     display: grid;
     max-width: 1000px;
     padding-top: 35vh;
-    padding-bottom: 15vh;
+    padding-bottom: 25vh;
     grid-column-gap: 1em;
     grid-template-areas: 
       "img title" 
