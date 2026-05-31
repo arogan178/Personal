@@ -280,7 +280,7 @@ strong {
 .name-element {
   font-family: var(--ff-secondary);
   position: relative;
-  padding-bottom: 0.05em;
+  padding-bottom: 0.1em;
   z-index: 2;
 }
 
@@ -290,7 +290,7 @@ strong {
   width: 100%;
   transform: scaleX(0);
   height: 3px;
-  bottom: -2px;
+  bottom: 0px;
   left: 0;
   background-color: var(--clr-accent);
   box-shadow: 0 0 6px rgba(173, 14, 14, 0.4);
@@ -419,19 +419,19 @@ h3 {
 
   .section__title--intro {
     grid-area: title;
-    align-self: end; /* Push to bottom of row 1 */
-    margin-bottom: -0.2em;
+    align-self: center; /* Center horizontally with the photo in the 1fr row */
+    margin-bottom: 0;
   }
 
   .section__subtitle--intro {
     grid-column: 1 / -1;
     grid-row: 2;
     text-align: right;
-    align-self: end;
+    align-self: start;
     width: calc(100% + 1.5em);
     left: -1.5em;
     position: relative;
-    margin-top: 0.5em;
+    margin-top: -1em;
     padding-right: calc(1.5em + 0.8em);
   }
 }
