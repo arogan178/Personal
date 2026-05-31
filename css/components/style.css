@@ -417,6 +417,7 @@ h3 {
   .section__title--intro {
     grid-area: title;
     align-self: end; /* Push to bottom of row 1 */
+    margin-bottom: -0.2em;
   }
 
   .section__subtitle--intro {
