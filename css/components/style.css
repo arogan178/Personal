@@ -424,10 +424,15 @@ h3 {
   }
 
   .section__subtitle--intro {
-    grid-area: subtitle;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: left;
     align-self: start;
-    justify-self: start;
+    width: calc(100% + 1.5em);
+    left: -1.5em;
+    position: relative;
     margin-top: 0.5em;
+    padding-left: calc(1.5em + 250px + 1em + 0.3em);
   }
 }
 
