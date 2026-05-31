@@ -470,6 +470,7 @@ h3 {
 @media (min-width: 650px) {
   .about-me {
     max-width: 1000px;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr 200px;
     grid-template-areas: "title img" "subtitle img" "text img";
@@ -507,7 +508,6 @@ h3 {
 
 .my-experience {
   margin-top: 2em;
-  padding: 15px; /* Added matching padding */
 }
 
 /* Removed center alignment for Experience title to match others */
@@ -639,8 +639,6 @@ h3 {
 .my-projects {
   margin-inline: auto;
   text-align: justify;
-  padding: 15px;
-  margin-top: 30px;
 }
 
 .projects-grid {
@@ -764,7 +762,6 @@ h3 {
 .my-skills {
   margin-inline: auto;
   text-align: justify;
-  padding: 15px;
   margin-top: 30px;
   opacity: 0;
   visibility: hidden;
