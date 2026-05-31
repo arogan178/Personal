@@ -123,7 +123,8 @@ html.dark .theme-toggle .sun-icon {
   position: relative;
 }
 
-.nav__link[data-active]::after {
+.nav__link[data-active]::after,
+.nav__link:hover::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -132,6 +133,22 @@ html.dark .theme-toggle .sun-icon {
   height: 2px;
   background: var(--clr-accent);
   border-radius: 2px;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav__link:hover {
