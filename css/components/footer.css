@@ -38,6 +38,7 @@
   text-decoration: none;
   position: relative;
   transition: opacity 300ms ease, color 300ms ease;
+  padding-bottom: 0.1em;
 }
 
 .footer__link::after {
@@ -46,7 +47,7 @@
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   background-color: var(--clr-accent);
   transform-origin: bottom right;
