@@ -490,6 +490,7 @@ h3 {
     padding-right: calc(200px + 4em);
     align-self: start;
     margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   .about-me__img {
