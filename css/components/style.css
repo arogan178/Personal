@@ -419,20 +419,15 @@ h3 {
 
   .section__title--intro {
     grid-area: title;
-    align-self: center; /* Center horizontally with the photo in the 1fr row */
+    align-self: end; /* Push to bottom of row 1 */
     margin-bottom: 0;
   }
 
   .section__subtitle--intro {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    text-align: right;
+    grid-area: subtitle;
     align-self: start;
-    width: calc(100% + 1.5em);
-    left: -1.5em;
-    position: relative;
-    margin-top: -1em;
-    padding-right: calc(1.5em + 0.8em);
+    justify-self: start;
+    margin-top: 0.5em;
   }
 }
 
