@@ -499,7 +499,7 @@ h3 {
   }
 
   .about-me__body {
-    grid-area: text;
+    grid-column: 1 / -1;
   }
 }
 
