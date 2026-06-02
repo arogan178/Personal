@@ -709,6 +709,15 @@ h3 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.project__logo--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--clr-card-start), var(--clr-card-end));
+  color: var(--font-color);
+  font-size: 1.35rem;
+}
+
 .project-item:hover .project__logo {
   transform: scale(1.05) rotate(-2deg);
   box-shadow: 0 4px 15px rgba(173, 14, 14, 0.2);
