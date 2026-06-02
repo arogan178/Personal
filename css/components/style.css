@@ -366,6 +366,18 @@ h3 {
   border-radius: 6px;
   box-shadow: 0 4px 6px -1px rgba(173, 14, 14, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   margin-bottom: 1.5rem;
+  margin-left: -0.8em;
+}
+
+/* Base styling overrides margin-left back to 0 for non-grid layouts on mobile, etc */
+@media (max-width: 649px) {
+  .section__subtitle--intro,
+  .section__subtitle--about,
+  .section__subtitle--experience,
+  .section__subtitle--skills,
+  .section__subtitle--projects {
+    margin-left: 0;
+  }
 }
 
 /* ###################### INTRO SECTION CSS ################################# */
@@ -428,11 +440,11 @@ h3 {
     grid-row: 2;
     text-align: left;
     align-self: start;
-    width: calc(100% + 1.5em);
-    left: -1.5em;
+    width: calc(100% + 0.8em);
+    left: 0;
     position: relative;
     margin-top: 0.5em;
-    padding-left: calc(1.5em + 250px + 1em + 0.3em);
+    padding-left: calc(0.8em + 250px + 1em + 0.3em);
   }
 }
 
@@ -507,8 +519,8 @@ h3 {
     grid-row: 2;
     position: relative;
     left: 0;
-    width: 100%;
-    padding-left: 0.8em;
+    width: calc(100% + 0.8em);
+    padding-left: 1.6em;
     padding-right: calc(200px + 1em);
     align-self: start;
     margin-top: 0;
