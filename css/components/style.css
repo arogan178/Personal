@@ -399,7 +399,7 @@ h3 {
     display: grid;
     max-width: 1000px;
     padding-top: 35vh;
-    padding-bottom: 25vh;
+    padding-bottom: 30vh;
     grid-column-gap: 1em;
     grid-template-areas: 
       "img title" 
