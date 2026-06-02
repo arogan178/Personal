@@ -4,8 +4,9 @@
   background: var(--background-color);
   color: var(--font-color);
   text-align: center;
-  padding: 1em;
-  font-size: var(--fs-h4);
+  padding: 2em 1em;
+  font-size: var(--fs-body);
+  border-top: 1px solid var(--clr-border);
   transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
@@ -25,7 +26,8 @@
   transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
-.footer a {
+.footer a,
+.footer__link {
   color: inherit;
   margin: 0 0.5em 0;
   text-decoration: none;
@@ -34,16 +36,32 @@
 .footer__link {
   font-weight: var(--fw-bold);
   margin: 0 1em;
-  text-decoration: none;
+  position: relative;
+  transition: opacity 300ms ease, color 300ms ease;
+  padding-bottom: 0.1em;
 }
 
-.footer__link:hover,
-.social-list__link:hover {
-  opacity: 0.7;
+.footer__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--clr-accent);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer__link:hover {
-  text-decoration: underline;
+  opacity: 1;
+  color: var(--clr-accent);
+}
+
+.footer__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .social-list {
@@ -56,4 +74,14 @@
 
 .social-list__link {
   padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 250ms ease;
+}
+
+.social-list__link:hover {
+  transform: translateY(-2px);
+  color: var(--clr-accent);
 }

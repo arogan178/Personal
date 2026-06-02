@@ -1,89 +1,110 @@
 /* ###################### HEADER BAR CSS ################################# */
 
 .header__bar {
-  background: #ad0e0e;
+  background: transparent;
+  color: var(--font-color);
+  border-bottom: 1px solid transparent;
   display: flex;
   justify-content: space-between;
-  /* padding: 0.5em; */
+  align-items: center;
   position: fixed;
   width: 100%;
   z-index: 10;
-  box-shadow: var(--bs);
-  height: 2em;
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-  visibility: hidden;
+  height: 3.5em; /* Taller, more modern header */
+  padding: 0 1.5em;
+  transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
 }
 
-.header__bar.is-visible {
-  height: 2em;
-  opacity: 1;
-  visibility: visible;
+.header__bar.is-scrolled {
+  background: var(--clr-header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--clr-border);
 }
 
 /* ###################### Dark Theme Menu CSS ################################# */
 .theme__selector {
-  padding: 0.25em 0.5em;
-}
-
-.theme__logo {
-  display: inline-block;
-}
-
-.logo__toggle-container {
   display: flex;
   align-items: center;
 }
 
-.toggle-switch {
-  display: inline-block;
-  margin-left: 0.5em;
-}
-
-#toggle-input {
-  display: none;
-}
-
-.toggle-switch__control {
-  width: 30px;
-  height: 10px;
-  border-radius: 10px;
-  position: relative;
-  background: #b8a8a8;
+.theme-toggle,
+.nav-toggle {
+  background: transparent;
+  border: none;
+  color: var(--font-color);
   cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease, color 200ms ease, transform 150ms ease;
+  position: relative;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
 }
 
-.toggle-switch__control::after {
-  content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  border-radius: 10px;
+.theme-toggle {
+  padding: 0.5em;
+}
+
+.nav-toggle {
+  padding: 0;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+  background-color: var(--clr-border);
+}
+
+.theme-toggle:active,
+.nav-toggle:active {
+  transform: scale(0.92);
+}
+
+.theme-toggle svg {
   position: absolute;
-  left: -1px;
-  top: -3px;
-  background-color: var(--toggle-color);
-  transition: left 250ms, background-color 700ms;
+  transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-#toggle-input:checked + .toggle-switch__control::after {
-  left: 15px;
+.theme-toggle .moon-icon {
+  opacity: 0;
+  transform: translateY(20px) rotate(-90deg);
+}
+
+.theme-toggle .sun-icon {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+/* Dark Mode State - we use a class on the html tag which we'll add via JS */
+html.dark .theme-toggle .moon-icon {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+html.dark .theme-toggle .sun-icon {
+  opacity: 0;
+  transform: translateY(-20px) rotate(90deg);
 }
 
 /* ###################### NAV MENU CSS ################################# */
 
 .nav {
   position: fixed;
-  background: rgba(0, 0, 0, 0.658);
-  color: var(--clr-light);
-  top: 2em;
-  bottom: 0;
+  background: var(--clr-nav-bg, rgba(10, 10, 10, 0.85));
+  color: var(--font-color);
+  top: 0;
+  height: 100vh;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 9;
   transform: translate(100%);
-  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
-  backdrop-filter: blur(15px);
+  visibility: hidden;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1), visibility 350ms;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .nav__list {
@@ -97,26 +118,70 @@
   padding: 0;
 }
 
+.nav__item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .nav__link {
   color: inherit;
   font-weight: var(--fw-bold);
   font-size: var(--fs-h3);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  padding-bottom: 0.1em;
+}
+
+.nav__link[data-active]::after,
+.nav__link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-accent);
+  border-radius: 2px;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav__link:hover {
   color: var(--clr-accent);
 }
 
-.nav-toggle {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
 .nav-open .nav {
   transform: translateX(0);
+  visibility: visible;
 }
+
+.nav-open .nav__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-open .nav__item:nth-child(1) { transition-delay: 100ms; }
+.nav-open .nav__item:nth-child(2) { transition-delay: 150ms; }
+.nav-open .nav__item:nth-child(3) { transition-delay: 200ms; }
+.nav-open .nav__item:nth-child(4) { transition-delay: 250ms; }
+.nav-open .nav__item:nth-child(5) { transition-delay: 300ms; }
+.nav-open .nav__item:nth-child(6) { transition-delay: 350ms; }
 
 .nav-open .nav-toggle .hamburger {
   transform: rotate(0.625turn);
@@ -143,22 +208,20 @@
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: var(--clr-light);
-  width: 2em;
-  height: 3px;
-  border-radius: 1em;
-  transition: all 400ms ease-in-out;
+  background: var(--font-color);
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 1rem;
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hamburger__icon {
-  padding-right: 0.25em;
-  filter: 0;
-  transition: filter 200ms ease-in-out;
-}
-
-.hamburger__icon:hover {
-  filter: invert(0.25);
-  transition: filter 200ms ease-in-out;
+  position: relative;
+  width: 1.5rem;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger::before {
