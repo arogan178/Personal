@@ -73,32 +73,24 @@
       document.documentElement.classList.remove("dark");
     }
 
+    if (toggleBtn) {
+      toggleBtn.classList.toggle("dark-mode", theme === DARK_THEME);
+    }
+
     if (persist) {
       localStorage.setItem(PREFERRED_THEME_KEY, theme);
-    }
-  }
-
-  function updateUI(theme) {
-    if (toggleBtn) {
-      if (theme === DARK_THEME) {
-        toggleBtn.classList.add("dark-mode");
-      } else {
-        toggleBtn.classList.remove("dark-mode");
-      }
     }
   }
 
   function handleThemeToggle() {
     const newTheme = currentTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME;
     setTheme(newTheme, true);
-    updateUI(newTheme);
   }
 
   function initializeTheme() {
     const osPreference = window.matchMedia(DARK_SCHEME_QUERY).matches ? DARK_THEME : LIGHT_THEME;
     const preferredTheme = localStorage.getItem(PREFERRED_THEME_KEY) || osPreference;
     setTheme(preferredTheme, false);
-    updateUI(preferredTheme);
     
     if (toggleBtn) {
       toggleBtn.addEventListener("click", handleThemeToggle);
@@ -156,8 +148,6 @@
     const header = document.querySelector(".header__bar");
     if (!header) return;
 
-    if (window.scrollY > 50) header.classList.add("is-scrolled");
-
     const handleScroll = throttle(() => {
       if (window.scrollY > 50) {
         header.classList.add("is-scrolled");
@@ -167,6 +157,7 @@
     }, 100);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
   }
 
   function sectionVisibility() {
@@ -315,25 +306,22 @@
   function initializeNameRandomizer(selector) {
     const element = document.querySelector(selector);
     if (!element) return;
+    const runNameAnimation = () => {
+      animateText(element);
+      animateUnderline(element);
+    };
     
     // Attach hover effect
-    element.addEventListener("mouseover", () => {
-      animateText(element);
-      animateUnderline(element);
-    });
+    element.addEventListener("mouseover", runNameAnimation);
 
     // Auto-trigger once on load (delayed slightly to sync with page fade-in)
-    setTimeout(() => {
-      animateText(element);
-      animateUnderline(element);
-    }, 400);
+    setTimeout(runNameAnimation, 400);
   }
 
   // --- Initialization ---
 
   function init() {
     try {
-      initializeTheme();
       headerBarScroll();
       navToggle();
       sectionVisibility();

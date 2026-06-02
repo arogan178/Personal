@@ -28,12 +28,12 @@
   align-items: center;
 }
 
-.theme-toggle {
+.theme-toggle,
+.nav-toggle {
   background: transparent;
   border: none;
   color: var(--font-color);
   cursor: pointer;
-  padding: 0.5em;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -45,11 +45,21 @@
   height: 36px;
 }
 
-.theme-toggle:hover {
+.theme-toggle {
+  padding: 0.5em;
+}
+
+.nav-toggle {
+  padding: 0;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
   background-color: var(--clr-border);
 }
 
-.theme-toggle:active {
+.theme-toggle:active,
+.nav-toggle:active {
   transform: scale(0.92);
 }
 
@@ -154,28 +164,6 @@ html.dark .theme-toggle .sun-icon {
 
 .nav__link:hover {
   color: var(--clr-accent);
-}
-
-.nav-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  transition: background-color 200ms ease, transform 150ms ease;
-}
-
-.nav-toggle:hover {
-  background-color: var(--clr-border);
-}
-
-.nav-toggle:active {
-  transform: scale(0.92);
 }
 
 .nav-open .nav {

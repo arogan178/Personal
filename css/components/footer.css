@@ -26,7 +26,8 @@
   transition: background-color 700ms ease-in-out, color 300ms ease-in-out;
 }
 
-.footer a {
+.footer a,
+.footer__link {
   color: inherit;
   margin: 0 0.5em 0;
   text-decoration: none;
@@ -35,7 +36,6 @@
 .footer__link {
   font-weight: var(--fw-bold);
   margin: 0 1em;
-  text-decoration: none;
   position: relative;
   transition: opacity 300ms ease, color 300ms ease;
   padding-bottom: 0.1em;
