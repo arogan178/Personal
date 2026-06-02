@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Andrea Bugeja — Data DevOps Engineer specialising in Kubernetes, GitOps, and streaming infrastructure. CKAD certified, MSc AI graduate."
+      content="Andrea Bugeja — Data DevOps Engineer specialising in Kubernetes, OpenShift, GitOps automation, FinOps, and streaming data infrastructure."
     />
     <meta name="author" content="Andrea Bugeja" />
     <meta
       name="keywords"
-      content="Andrea Bugeja, Data DevOps Engineer, Kubernetes, CKAD, GitOps, Portfolio, Resume"
+      content="Andrea Bugeja, Data DevOps Engineer, Kubernetes, OpenShift, GitOps, ArgoCD, Kafka, ClickHouse, RAGFlow, CKAD, Portfolio, Resume"
     />
 
     <!-- Open Graph / Facebook -->
@@ -19,16 +19,19 @@
     <meta property="og:title" content="Andrea Bugeja — Data DevOps Engineer" />
     <meta
       property="og:description"
-      content="Data DevOps Engineer specialising in Kubernetes, GitOps, and streaming infrastructure."
+      content="Data DevOps Engineer specialising in Kubernetes, OpenShift, GitOps automation, FinOps, and streaming data infrastructure."
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://andreabugeja.me/" />
-    <meta property="twitter:title" content="Andrea Bugeja — Data DevOps Engineer" />
+    <meta
+      property="twitter:title"
+      content="Andrea Bugeja — Data DevOps Engineer"
+    />
     <meta
       property="twitter:description"
-      content="Data DevOps Engineer specialising in Kubernetes, GitOps, and streaming infrastructure."
+      content="Data DevOps Engineer specialising in Kubernetes, OpenShift, GitOps automation, FinOps, and streaming data infrastructure."
     />
 
     <title>Andrea Bugeja — Data DevOps Engineer</title>
@@ -65,12 +68,12 @@
           (e.init = function (i, s, a) {
             function g(t, e) {
               var o = e.split(".");
-              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+              (2 == o.length && ((t = t[o[0]]), (e = o[1])),
                 (t[e] = function () {
                   t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                });
+                }));
             }
-            ((p = t.createElement("script")).type = "text/javascript"),
+            (((p = t.createElement("script")).type = "text/javascript"),
               (p.crossOrigin = "anonymous"),
               (p.async = !0),
               (p.src =
@@ -78,8 +81,8 @@
                 "/static/array.js"),
               (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
                 p,
-                r
-              );
+                r,
+              ));
             var u = e;
             for (
               void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
@@ -87,7 +90,9 @@
                 u.toString = function (t) {
                   var e = "posthog";
                   return (
-                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                    "posthog" !== a && (e += "." + a),
+                    t || (e += " (stub)"),
+                    e
                   );
                 },
                 u.people.toString = function () {
@@ -95,7 +100,7 @@
                 },
                 o =
                   "init Ie Ts Ms Ee Es Rs capture Ge calculateEventProperties Os register register_once register_for_session unregister unregister_for_session js getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ds Fs createPersonProfile Ls Ps opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Cs debug I As getPageViewId captureTraceFeedback captureTraceMetric".split(
-                    " "
+                    " ",
                   ),
                 n = 0;
               n < o.length;
@@ -117,9 +122,48 @@
     <header>
       <div class="header__bar">
         <div class="theme__selector">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <svg
+              class="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
           </button>
         </div>
 
@@ -172,7 +216,9 @@
             >Andrea Bugeja</strong
           >
         </h1>
-        <p class="section__subtitle section__subtitle--intro">Welcome!</p>
+        <p class="section__subtitle section__subtitle--intro">
+          Kubernetes / GitOps / Streaming Infrastructure
+        </p>
         <img
           src="img/andrea_casual.jpg"
           alt="Andrea sitting on a wall looking philosophical"
@@ -200,7 +246,17 @@
           </p>
 
           <p>
-            I'm a Certified Kubernetes Application Developer (CKAD), focused on Kubernetes data platforms, GitOps delivery, and production streaming infrastructure across AWS and Linux environments.
+            I'm a Certified Kubernetes Application Developer (CKAD), focused on
+            Kubernetes and OpenShift data platforms, GitOps automation, FinOps
+            right-sizing, stateful workload migration, and production streaming
+            infrastructure across AWS and Linux environments.
+          </p>
+
+          <p>
+            My recent work spans cluster bootstrapping, ArgoCD/Kustomize
+            automation, Kubernetes resource right-sizing, ClickHouse/Kafka
+            reliability work, Vault and OIDC hardening, and upstream
+            contributions to RAGFlow for enterprise deployment use cases.
           </p>
 
           <p>
@@ -248,16 +304,27 @@
             </div>
             <ul class="job-desc">
               <li>
-                Operate production Kubernetes data platforms supporting Kafka,
-                ClickHouse, Redis, and other core streaming services.
+                Built Python and Bash GitOps automation for cluster bootstrap,
+                ArgoCD/Kustomize manifest generation, and cross-datacenter
+                environment replication, reducing new environment scaffolding
+                from weeks of manual work to about 60 seconds.
               </li>
               <li>
-                Maintain GitOps and configuration workflows with ArgoCD, Ansible,
-                Helm, and Python to keep deployments repeatable and auditable.
+                Developed a VPA/Goldilocks FinOps auto-updater that parses
+                Kubernetes resource recommendations and opens Bitbucket PRs,
+                right-sizing workloads across 11 distinct internal namespaces.
               </li>
               <li>
-                Support AWS capacity planning, cost optimisation, and platform
-                reliability across operational environments.
+                Authored asynchronous Kubernetes StatefulSet/PVC migration
+                tooling that scales source replicas, runs Rsync jobs, and
+                reconciles destination replicas to prevent split-brain during
+                cross-cluster data moves.
+              </li>
+              <li>
+                Automated ClickHouse upgrade blockers, Kafka Connect Azure
+                CosmosDB integration, Strimzi Kafka ACL deduplication, GitOps
+                egress firewall PRs, Vault snapshots, and safer Ansible
+                deployment limits.
               </li>
             </ul>
           </article>
@@ -272,16 +339,17 @@
             </div>
             <ul class="job-desc">
               <li>
-                Built automated test suites for online banking platforms to improve
-                release confidence and reduce manual QA effort.
+                Built automated test suites for online banking platforms to
+                improve release confidence and reduce manual QA effort.
               </li>
               <li>
-                Introduced CI/CD pipelines for teams moving from manual deployments
-                to controlled, repeatable delivery.
+                Introduced CI/CD pipelines for teams moving from manual
+                deployments to controlled, repeatable delivery.
               </li>
               <li>
-                Supported core banking applications across environments, including
-                internet banking, CRM, and portfolio management systems.
+                Supported core banking applications across environments,
+                including internet banking, CRM, and portfolio management
+                systems.
               </li>
             </ul>
           </article>
@@ -319,6 +387,44 @@
           <article class="project-item">
             <a
               class="project-item__link"
+              href="https://github.com/infiniflow/ragflow"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="project-item__head">
+                <span class="project__logo project__logo--icon">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </span>
+                <div class="project-item__title-group">
+                  <h3 class="project-item__title">RAGFlow Contributions</h3>
+                  <svg
+                    class="project-item__arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="project-item__subtitle">
+                Merged upstream PostgreSQL retry resiliency and single-bucket
+                MinIO/S3 storage mode for enterprise deployments, reducing
+                bucket sprawl and aligning with stricter IAM policies.
+              </p>
+            </a>
+          </article>
+
+          <article class="project-item">
+            <a
+              class="project-item__link"
               href="https://macrotrackr.com"
               target="_blank"
               rel="noopener"
@@ -334,15 +440,27 @@
                 />
                 <div class="project-item__title-group">
                   <h3 class="project-item__title">MacroTrackr</h3>
-                  <svg class="project-item__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg
+                    class="project-item__arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </div>
               </div>
               <p class="project-item__subtitle">
-                A macro and nutrition tracking web app. Built with React,
-                TypeScript, Bun, Elysia, SQLite, and Docker Compose.
+                AGPLv3 self-hostable nutrition tracker with local auth, SQLite
+                persistence, Docker Compose/GHCR deployment, React, TypeScript,
+                Bun, and Elysia.
               </p>
             </a>
           </article>
@@ -356,14 +474,15 @@
         </p>
         <div class="skills-grid">
           <section class="skill-group">
-            <h3 class="skill-group__title">Platform &amp; Cloud</h3>
+            <h3 class="skill-group__title">Platform &amp; GitOps</h3>
             <ul class="skill-list">
               <li class="skill-item">Kubernetes</li>
               <li class="skill-item">OpenShift</li>
               <li class="skill-item">Helm</li>
+              <li class="skill-item">Kustomize</li>
+              <li class="skill-item">ArgoCD</li>
+              <li class="skill-item">Tekton</li>
               <li class="skill-item">Docker</li>
-              <li class="skill-item">AWS</li>
-              <li class="skill-item">Linux</li>
             </ul>
           </section>
 
@@ -371,29 +490,40 @@
             <h3 class="skill-group__title">Data Infrastructure</h3>
             <ul class="skill-list">
               <li class="skill-item">Kafka</li>
+              <li class="skill-item">Strimzi</li>
               <li class="skill-item">ClickHouse</li>
-              <li class="skill-item">Redis Cluster</li>
+              <li class="skill-item">PostgreSQL</li>
+              <li class="skill-item">Redis</li>
               <li class="skill-item">NiFi</li>
+              <li class="skill-item">MinIO</li>
+              <li class="skill-item">Azure Cosmos DB</li>
             </ul>
           </section>
 
           <section class="skill-group">
-            <h3 class="skill-group__title">Automation &amp; Delivery</h3>
+            <h3 class="skill-group__title">Automation &amp; Backend</h3>
             <ul class="skill-list">
-              <li class="skill-item">Ansible</li>
-              <li class="skill-item">AWX</li>
-              <li class="skill-item">ArgoCD</li>
-              <li class="skill-item">Jenkins</li>
               <li class="skill-item">Python</li>
-              <li class="skill-item">PowerShell</li>
+              <li class="skill-item">Bash</li>
+              <li class="skill-item">Ansible</li>
+              <li class="skill-item">Terraform</li>
+              <li class="skill-item">Jenkins</li>
+              <li class="skill-item">Pydantic</li>
+              <li class="skill-item">FastAPI</li>
+              <li class="skill-item">SQLAlchemy</li>
             </ul>
           </section>
 
           <section class="skill-group">
-            <h3 class="skill-group__title">Observability</h3>
+            <h3 class="skill-group__title">Security &amp; Observability</h3>
             <ul class="skill-list">
+              <li class="skill-item">HashiCorp Vault</li>
+              <li class="skill-item">Keycloak/OIDC</li>
+              <li class="skill-item">SOPS</li>
+              <li class="skill-item">RBAC</li>
               <li class="skill-item">Grafana</li>
               <li class="skill-item">Prometheus</li>
+              <li class="skill-item">Goldilocks/VPA</li>
             </ul>
           </section>
 
